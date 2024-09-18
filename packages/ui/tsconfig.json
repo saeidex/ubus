@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2022", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "rootDir": "."
+  },
+  "exclude": ["node_modules"],
+  "extends": "@ubus/tsconfig/internal-package.json",
+  "include": ["src"]
+}

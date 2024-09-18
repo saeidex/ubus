@@ -1,0 +1,38 @@
+{
+  "name": "@ubus/api",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@ubus/prettier-config",
+  "dependencies": {
+    "@trpc/server": "catalog:",
+    "@ubus/auth": "workspace:*",
+    "@ubus/db": "workspace:*",
+    "@ubus/validators": "workspace:*",
+    "superjson": "2.2.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@ubus/eslint-config": "workspace:*",
+    "@ubus/prettier-config": "workspace:*",
+    "@ubus/tsconfig": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  }
+}
