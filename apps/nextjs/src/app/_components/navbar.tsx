@@ -30,8 +30,16 @@ const links: ILink[] = [
 ];
 
 export const Navbar = () => {
-  const { theme } = useTheme();
-  const logoSrc = theme === "light" ? "ubus-dark.svg" : "ubus.svg";
+  const { theme, resolvedTheme } = useTheme();
+  const [logoSrc, setLogoSrc] = React.useState("ubus.svg");
+
+  React.useEffect(() => {
+    if (theme === "dark" || resolvedTheme === "dark") {
+      setLogoSrc("ubus.svg");
+    } else {
+      setLogoSrc("ubus-dark.svg");
+    }
+  }, [theme, resolvedTheme]);
 
   return (
     <nav className="border-outline">
