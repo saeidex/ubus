@@ -15,6 +15,15 @@ export default {
       },
     },
     extend: {
+      colors: {
+        background: "hsl(var(--md-sys-color-surface-container-lowest))",
+        primary: {
+          foreground: "hsl(var(--md-sys-color-on-primary))",
+        },
+        secondary: {
+          foreground: "hsl(var(--md-sys-color-on-secondary))",
+        },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
