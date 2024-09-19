@@ -59,7 +59,7 @@ export const Navbar = () => {
             UBus
           </span>
         </Link>
-        <div className="flex space-x-3 md:order-2 md:space-x-3 rtl:space-x-reverse">
+        <div className="flex gap-1.5 md:order-2 rtl:space-x-reverse">
           <NavLink link={{ href: "sign in", label: "Sign in" }} />
           <Button variant={"primary"}>Get started</Button>
           <Button className="md:hidden">
@@ -71,7 +71,7 @@ export const Navbar = () => {
           <ul className="mt-4 flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:p-0 rtl:space-x-reverse">
             {links.map((link) => (
               <li key={link.href}>
-                <NavLink link={link} />
+                <NavLink className="px-0" link={link} />
               </li>
             ))}
           </ul>
@@ -81,15 +81,22 @@ export const Navbar = () => {
   );
 };
 
-export const NavLink = ({ link }: { link: ILink }) => {
+export const NavLink = ({
+  link,
+  className,
+}: {
+  className?: string;
+  link: ILink;
+}) => {
   const pathname = usePathname();
   return (
     <>
       <Link href={link.href}>
         <Button
           className={cn(
-            "px-0 text-on-surface hover:text-primary",
+            "text-on-surface hover:text-primary",
             pathname === link.href && "text-primary",
+            className,
           )}
           variant={"link"}
         >
