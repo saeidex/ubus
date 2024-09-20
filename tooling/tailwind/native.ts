@@ -8,12 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--md-sys-color-surface-container-lowest))",
+        background: "hsl(var(--ubus-sys-color-surface-container-lowest))",
         primary: {
-          foreground: "hsl(var(--md-sys-color-on-primary))",
+          foreground: "hsl(var(--ubus-sys-color-on-primary))",
         },
         secondary: {
-          foreground: "hsl(var(--md-sys-color-on-secondary))",
+          foreground: "hsl(var(--ubus-sys-color-on-secondary))",
         },
       },
     },
