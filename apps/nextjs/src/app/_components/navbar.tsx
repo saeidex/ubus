@@ -51,8 +51,13 @@ export const Navbar = () => {
           </span>
         </Link>
         <div className="flex gap-1.5 md:order-2 rtl:space-x-reverse">
-          <NavLink link={{ href: "sign in", label: "Sign in" }} />
-          <Button variant={"primary"}>Get started</Button>
+          <NavLink
+            className="hidden md:block"
+            link={{ href: "sign in", label: "Sign in" }}
+          />
+          <Button className="hidden md:block" variant={"primary"}>
+            Get started
+          </Button>
           <Button className="md:hidden">
             <span className="sr-only">Open main menu</span>
             <MenuIcon />
