@@ -4,8 +4,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
 
+import useThemeBasedValue from "@ubus/hooks/useThemeBasedValue";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 import { MenuIcon } from "@ubus/ui/icons";
@@ -30,16 +30,7 @@ const links: ILink[] = [
 ];
 
 export const Navbar = () => {
-  const { theme, resolvedTheme } = useTheme();
-  const [logoSrc, setLogoSrc] = React.useState("ubus.svg");
-
-  React.useEffect(() => {
-    if (theme === "dark" || resolvedTheme === "dark") {
-      setLogoSrc("ubus.svg");
-    } else {
-      setLogoSrc("ubus-dark.svg");
-    }
-  }, [theme, resolvedTheme]);
+  const logoSrc = useThemeBasedValue("ubus.svg", "ubus-dark.svg");
 
   return (
     <nav className="border-outline">

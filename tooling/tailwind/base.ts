@@ -6,15 +6,15 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        "heading-large": [
+        "display-large": [
           "3.5625rem",
           { lineHeight: "4rem", fontWeight: "400" },
         ],
-        "heading-medium": [
+        "display-medium": [
           "2.8125rem",
           { lineHeight: "3.25rem", fontWeight: "400" },
         ],
-        "heading-small": [
+        "display-small": [
           "2.5rem",
           { lineHeight: "2.75rem", fontWeight: "400" },
         ],

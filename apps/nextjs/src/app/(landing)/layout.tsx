@@ -1,12 +1,14 @@
 import React from "react";
 
+import { Footer } from "../_components/footer";
 import { Navbar } from "../_components/navbar";
 
 const LandingPageLayout = (props: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main className="container">{props.children}</main>
+      <main>{props.children}</main>
+      <Footer />
     </>
   );
 };

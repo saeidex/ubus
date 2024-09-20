@@ -11,6 +11,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import "~/app/globals.css";
 
 import { env } from "~/env";
+import { TailwindIndicator } from "./_components/tailwind-indicator";
 
 export const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -56,16 +57,15 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           GeistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <TRPCReactProvider>
-            <div className="container h-dvh !max-w-screen-xl">
-              {props.children}
-            </div>
+            <div className="container min-h-dvh">{props.children}</div>
           </TRPCReactProvider>
           <div className="absolute bottom-4 right-4">
             <ThemeToggle />
           </div>
           <Toaster />
+          <TailwindIndicator />
         </ThemeProvider>
       </body>
     </html>
