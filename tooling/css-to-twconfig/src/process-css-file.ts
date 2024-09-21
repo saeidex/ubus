@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import * as fs from "node:fs";
 
 import { rgbToHsl } from "./rgb-to-hsl";
 
@@ -9,7 +9,8 @@ export const processCssFile = (inputPath: string, outputPath: string) => {
   const newCssContent = cssContent.replace(
     rgbRegex,
     (_, r: string, g: string, b: string) => {
-      return rgbToHsl(parseInt(r), parseInt(g), parseInt(b));
+      const HSL = rgbToHsl(parseInt(r), parseInt(g), parseInt(b));
+      return `${HSL.h} ${HSL.s}% ${HSL.l}%`;
     },
   );
 
