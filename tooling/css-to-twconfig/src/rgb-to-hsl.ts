@@ -1,52 +1,37 @@
 export const rgbToHsl = (r: number, g: number, b: number) => {
-  var min,
-    max,
-    i,
-    l,
-    s,
-    maxcolor,
-    h,
-    rgb = [];
-  rgb[0] = r / 255;
-  rgb[1] = g / 255;
-  rgb[2] = b / 255;
-  min = rgb[0];
-  max = rgb[0];
-  maxcolor = 0;
-  for (i = 0; i < rgb.length - 1; i++) {
-    if (rgb[i + 1] <= min) {
-      min = rgb[i + 1];
+  let h = 0;
+  let s = 0;
+
+  const rgb: [number, number, number] = [r / 255, g / 255, b / 255];
+
+  const min = Math.min(...rgb);
+  const max = Math.max(...rgb);
+
+  const l = (min + max) / 2;
+
+  if (min !== max) {
+    const delta = max - min;
+
+    s = l > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+
+    switch (max) {
+      case rgb[0]:
+        h = (rgb[1] - rgb[2]) / delta + (rgb[1] < rgb[2] ? 6 : 0);
+        break;
+      case rgb[1]:
+        h = (rgb[2] - rgb[0]) / delta + 2;
+        break;
+      case rgb[2]:
+        h = (rgb[0] - rgb[1]) / delta + 4;
+        break;
     }
-    if (rgb[i + 1] >= max) {
-      max = rgb[i + 1];
-      maxcolor = i + 1;
-    }
+
+    h *= 60;
   }
-  if (maxcolor == 0) {
-    h = (rgb[1] - rgb[2]) / (max - min);
-  }
-  if (maxcolor == 1) {
-    h = 2 + (rgb[2] - rgb[0]) / (max - min);
-  }
-  if (maxcolor == 2) {
-    h = 4 + (rgb[0] - rgb[1]) / (max - min);
-  }
-  if (isNaN(h)) {
-    h = 0;
-  }
-  h = h * 60;
-  if (h < 0) {
-    h = h + 360;
-  }
-  l = (min + max) / 2;
-  if (min == max) {
-    s = 0;
-  } else {
-    if (l < 0.5) {
-      s = (max - min) / (max + min);
-    } else {
-      s = (max - min) / (2 - max - min);
-    }
-  }
-  return { h: h.toFixed(2), s: (s * 100).toFixed(2), l: (l * 100).toFixed(2) };
+
+  return {
+    h: h.toFixed(2),
+    s: (s * 100).toFixed(2),
+    l: (l * 100).toFixed(2),
+  };
 };
