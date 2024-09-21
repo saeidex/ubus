@@ -11,7 +11,7 @@ export const Hero = ({ className }: { className?: string }) => {
   return (
     <section
       className={cn(
-        "grid py-8 lg:container lg:min-h-[calc(100dvh-6rem)] lg:px-12",
+        "grid md:py-8 lg:container lg:min-h-[calc(100dvh-6rem)] lg:px-12",
         className,
       )}
     >
