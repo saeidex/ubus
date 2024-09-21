@@ -154,7 +154,7 @@ export default {
         border: "hsl(var(--ubus-sys-color-outline))",
         input: "hsl(var(--ubus-sys-color-surface-container-low))",
         ring: "hsl(var(--ubus-sys-color-outline-variant))",
-        foreground: "hsl(var(--ubus-sys-color-on-surface-container))",
+        foreground: "hsl(var(--ubus-sys-color-on-surface))",
         destructive: {
           DEFAULT: "hsl(var(--ubus-sys-color-error))",
           foreground: "hsl(var(--ubus-sys-color-on-error))",
