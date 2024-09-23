@@ -1,4 +1,6 @@
 {
   "extends": "@ubus/tsconfig/base.json",
-  "include": ["routes"]
+  "include": [
+    "routes"
+  ]
 }

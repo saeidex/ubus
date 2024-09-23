@@ -1,5 +1,9 @@
 {
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "extends": "@ubus/tsconfig/internal-package.json",
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
