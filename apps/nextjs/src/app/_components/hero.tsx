@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { IconArrowRight, IconMouse } from "@tabler/icons-react";
 
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
-import { MouseIcon, RightArrowIcon } from "@ubus/ui/icons";
 
 export const Hero = ({ className }: { className?: string }) => {
   return (
@@ -27,7 +27,7 @@ export const Hero = ({ className }: { className?: string }) => {
           <Link href={"/dashboard"}>
             <Button variant={"withIcon"}>
               Track now
-              <RightArrowIcon className="h-5 w-5" />
+              <IconArrowRight size={5} />
             </Button>
           </Link>
         </div>
@@ -42,8 +42,8 @@ export const Hero = ({ className }: { className?: string }) => {
         </div>
       </div>
       <div className="hidden place-items-center lg:grid">
-        <div className="flex animate-bounce items-center justify-center gap-5">
-          <MouseIcon className={"fill-on-surface"} />
+        <div className="flex animate-bounce items-center justify-center gap-2">
+          <IconMouse size={32} />
           <span className="text-headline-small">Scroll Down</span>
         </div>
       </div>

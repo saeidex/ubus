@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IconMenu } from "@tabler/icons-react";
 
 import useThemeBasedValue from "@ubus/hooks/useThemeBasedValue";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
-import { MenuIcon } from "@ubus/ui/icons";
 
 const links: ILink[] = [
   {
@@ -60,7 +59,7 @@ export const Navbar = () => {
           </Button>
           <Button className="md:hidden">
             <span className="sr-only">Open main menu</span>
-            <MenuIcon />
+            <IconMenu />
           </Button>
         </div>
         <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">

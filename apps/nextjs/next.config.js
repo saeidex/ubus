@@ -7,6 +7,9 @@ createJiti(fileURLToPath(import.meta.url))("./src/env");
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  experimental: {
+    typedRoutes: true,
+  },
 
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
