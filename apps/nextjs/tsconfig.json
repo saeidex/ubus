@@ -1,16 +1,10 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ES2022",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["ES2022", "dom", "dom.iterable"],
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -19,12 +13,7 @@
     ],
     "module": "esnext"
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "extends": "@ubus/tsconfig/base.json",
-  "include": [
-    ".",
-    ".next/types/**/*.ts"
-  ]
+  "include": [".", ".next/types/**/*.ts"]
 }

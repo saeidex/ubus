@@ -86,7 +86,7 @@ export const NavLink = ({
   const pathname = usePathname();
   return (
     <>
-      <Link href={link.href}>
+      <Link href={{ href: link.href }}>
         <Button
           className={cn(
             "text-on-surface hover:text-primary",

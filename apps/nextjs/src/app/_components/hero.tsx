@@ -24,10 +24,10 @@ export const Hero = ({ className }: { className?: string }) => {
             Welcome to the IUBAT Bus Tracking System. Access live bus locations,
             schedules, and important updates all in one place.
           </h3>
-          <Link href={"/dashboard"}>
+          <Link href={{ href: "/dashboard" }}>
             <Button variant={"withIcon"}>
               Track now
-              <IconArrowRight size={5} />
+              <IconArrowRight stroke={2} size={20} />
             </Button>
           </Link>
         </div>

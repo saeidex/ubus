@@ -10,6 +10,8 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 import "~/app/globals.css";
 
+import { ScrollArea, ScrollBar } from "@ubus/ui/scroll-area";
+
 import { env } from "~/env";
 import { TailwindIndicator } from "./_components/tailwind-indicator";
 
@@ -57,13 +59,14 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           GeistMono.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" enableSystem>
           <TRPCReactProvider>
-            <div className="container min-h-dvh">{props.children}</div>
+            <ScrollArea className="container h-full">
+              {props.children}
+              <ScrollBar />
+            </ScrollArea>
           </TRPCReactProvider>
-          <div className="absolute bottom-4 right-4">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle className="fixed bottom-4 right-4 z-50" />
           <Toaster />
           <TailwindIndicator />
         </ThemeProvider>
