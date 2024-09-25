@@ -77,7 +77,7 @@ export const OurTeam = () => {
             >
               <div className="aspect-square max-h-full overflow-hidden rounded-lg bg-surface-container-high object-cover">
                 <Image
-                  src={`https:/github.com/${item.usernames.github}.png`}
+                  src={`https://github.com/${item.usernames.github}.png`}
                   width={400}
                   height={400}
                   alt="profile image"

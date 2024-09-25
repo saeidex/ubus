@@ -82,7 +82,7 @@ export const Footer = () => {
   return (
     <div className="border-t border-outline-variant bg-surface-dim py-8 pt-12 lg:pt-20">
       <div className="container flex flex-col gap-2">
-        <div className="flex flex-col gap-9">
+        <div className="flex flex-col gap-9 lg:gap-14">
           <div className="flex flex-col gap-4">
             <Link
               href="/"
