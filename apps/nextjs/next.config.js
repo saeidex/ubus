@@ -10,6 +10,9 @@ const config = {
   experimental: {
     typedRoutes: true,
   },
+  images: {
+    remotePatterns: [{ hostname: "github.com", protocol: "https" }],
+  },
 
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [

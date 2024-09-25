@@ -33,18 +33,18 @@ const keyFeatures = [
 
 export const KeyFeatures = () => {
   return (
-    <div className="grid grid-cols-2 items-center py-8">
+    <div className="container grid grid-cols-2 items-center py-8">
       <h2 className="text-headline-large font-bold leading-7 sm:text-display-medium lg:self-end">
         Discover the key benefits
       </h2>
       <Image
         alt="bus picture"
-        className="h-36 lg:row-span-2 lg:h-auto xl:row-span-3 xl:pl-4"
+        className="h-36 w-fit lg:row-span-2 lg:h-auto xl:row-span-3 xl:pl-4"
         src={"/bus.svg"}
         height={563}
         width={699}
       />
-      <p className="col-span-2 sm:pb-4 sm:text-headline-medium lg:col-span-1 lg:self-start lg:pb-0 lg:pt-4">
+      <p className="col-span-2 sm:pb-4 sm:text-headline-medium md:pb-12 lg:col-span-1 lg:self-start lg:pb-0 lg:pt-4">
         Track buses in real-time and get instant notifications, all from an
         easy-to-use dashboard.
       </p>
@@ -87,11 +87,11 @@ const essentialFeatures = [
 
 export const EssentialFeatures = () => {
   return (
-    <div className="grid gap-3 py-8 lg:my-32 lg:grid-cols-6 lg:gap-y-12">
+    <div className="container grid gap-3 py-8 lg:my-32 lg:grid-cols-6 lg:gap-y-12">
       <h2 className="text-headline-large font-bold leading-7 sm:text-display-medium lg:col-span-3 lg:self-end">
         Explore Our Essential Bus Tracking Features
       </h2>
-      <p className="pb-4 text-justify text-body-large md:pb-6 lg:col-span-3 lg:pb-0 lg:text-base">
+      <p className="text-balance pb-4 text-body-large md:pb-6 lg:col-span-3 lg:pb-0 lg:text-justify lg:text-base">
         Our bus tracking system offers three key features designed for student
         convenience. Access real-time bus locations, view schedules, and stay
         updated on important announcements all in one place. Experience seamless

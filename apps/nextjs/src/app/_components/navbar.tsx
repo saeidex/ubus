@@ -32,7 +32,7 @@ export const Navbar = () => {
   const logoSrc = useThemeBasedValue("ubus.svg", "ubus-dark.svg");
 
   return (
-    <nav className="border-outline">
+    <nav className="container border-outline">
       <div className="mx-auto flex h-24 flex-wrap items-center justify-between">
         <Link
           href="/"

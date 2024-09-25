@@ -40,12 +40,12 @@ export function CarouselPlugin() {
 
 export const Testimonials = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+    Autoplay({ delay: 5000, stopOnInteraction: true }),
   );
   return (
-    <div className="w-full *:select-none lg:my-32">
+    <div className="container mb-10 *:select-none lg:my-32">
       <Carousel
-        className="relative mx-auto w-full max-w-6xl"
+        className="mx-auto w-full max-w-[240px] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-6xl"
         // plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
@@ -54,7 +54,7 @@ export const Testimonials = () => {
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
-              <div className="mx-auto flex max-w-2xl flex-col items-center justify-center gap-0 py-8 md:gap-4 lg:gap-6">
+              <div className="mx-auto flex max-w-full flex-col items-center justify-center gap-0 py-8 md:gap-4 lg:max-w-2xl lg:gap-6">
                 <div className="flex *:size-5 *:text-primary-fixed">
                   <IconStarFilled />
                   <IconStarFilled />

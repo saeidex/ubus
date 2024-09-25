@@ -90,3 +90,25 @@ export const Session = pgTable("session", {
 export const SessionRelations = relations(Session, ({ one }) => ({
   user: one(User, { fields: [Session.userId], references: [User.id] }),
 }));
+
+export const MessageEntries = pgTable("message_entries", {
+  firstName: varchar("first_name", { length: 255 }).notNull(),
+  lastName: varchar("last_name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  phone: integer("phone").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at", {
+    mode: "date",
+    withTimezone: true,
+  })
+    .notNull()
+    .defaultNow(),
+});
+
+export const CreateMessageEntriesSchema = createInsertSchema(
+  MessageEntries,
+).omit({
+  email: true,
+  phone: true,
+  createdAt: true,
+});

@@ -7,7 +7,7 @@ const LandingPageLayout = (props: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main>{props.children}</main>
+      <main className="mx-auto h-full w-full">{props.children}</main>
       <Footer />
     </>
   );
