@@ -24,7 +24,7 @@ export const OurTeam = () => {
             Meet the dedicated professionals behind our service.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {teamMembers.map((member) => (
             <TeamMemberCard item={member} key={member.usernames.github} />
           ))}
@@ -48,7 +48,7 @@ const TeamMemberCard = ({ item }: { item: ITeamMember }) => {
           alt="profile image"
         />
       </div>
-      <h4 className="text-center text-body-small font-bold sm:text-body-large">
+      <h4 className="line-clamp-1 text-center text-body-small font-bold sm:text-body-large">
         {item.name}
       </h4>
       <div className="flex items-center justify-center gap-3">

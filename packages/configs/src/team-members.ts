@@ -23,7 +23,7 @@ export const teamMembers: ITeamMember[] = [
   {
     name: "Muhammad Rony",
     usernames: {
-      github: "",
+      github: "r-ony-s",
     },
   },
   {
@@ -49,4 +49,4 @@ export const teamMembers: ITeamMember[] = [
       x: "saeidex_",
     },
   },
-];export 
+];
