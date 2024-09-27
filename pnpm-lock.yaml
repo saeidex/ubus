@@ -260,6 +260,9 @@ importers:
       '@ubus/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@ubus/configs':
+        specifier: workspace:*
+        version: link:../../packages/configs
       '@ubus/db':
         specifier: workspace:*
         version: link:../../packages/db
@@ -403,6 +406,27 @@ importers:
       zod:
         specifier: 'catalog:'
         version: 3.23.8
+    devDependencies:
+      '@ubus/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@ubus/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@ubus/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      eslint:
+        specifier: 'catalog:'
+        version: 9.9.0(jiti@1.21.6)
+      prettier:
+        specifier: 'catalog:'
+        version: 3.3.3
+      typescript:
+        specifier: 'catalog:'
+        version: 5.5.4
+
+  packages/configs:
     devDependencies:
       '@ubus/eslint-config':
         specifier: workspace:*
@@ -603,7 +627,7 @@ importers:
         version: 7.35.0(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-react-hooks:
         specifier: rc
-        version: 5.1.0-rc-04bd67a4-20240924(eslint@9.9.0(jiti@1.21.6))
+        version: 5.1.0-rc-3edc000d-20240926(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-turbo:
         specifier: ^2.1.1
         version: 2.1.1(eslint@9.9.0(jiti@1.21.6))
@@ -4511,8 +4535,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-react-hooks@5.1.0-rc-04bd67a4-20240924:
-    resolution: {integrity: sha512-7z/4xgNRUds/0jLx1znXbHS1KWIfaLJgaP9maBR3P16ynGppsxmxSgnVAG6NBRYfvn0yfYecU5mGPXjcZnrtPw==}
+  eslint-plugin-react-hooks@5.1.0-rc-3edc000d-20240926:
+    resolution: {integrity: sha512-9E3TnhvxK6OWwG8EQyGlb2V9n0NQ+e1euW3Jj+t3M+6CkoBAKX25OPOn6QLK9Ylxib3xd4houOOUmrvwCSa8Jw==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -12656,7 +12680,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-react-hooks@5.1.0-rc-04bd67a4-20240924(eslint@9.9.0(jiti@1.21.6)):
+  eslint-plugin-react-hooks@5.1.0-rc-3edc000d-20240926(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       eslint: 9.9.0(jiti@1.21.6)
 
