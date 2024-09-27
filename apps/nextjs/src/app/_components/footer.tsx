@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import useThemeBasedValue from "@ubus/hooks/useThemeBasedValue";
+import { useThemeBasedValue } from "@ubus/hooks";
 import { Separator } from "@ubus/ui/separator";
 
 export interface IMenuItem {

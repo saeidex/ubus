@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-const useThemeBasedValue = <T>(lightValue: T, darkValue: T): T => {
+export const useThemeBasedValue = <T>(lightValue: T, darkValue: T): T => {
   const { theme, resolvedTheme } = useTheme();
   const [value, setValue] = useState(lightValue);
 
@@ -15,5 +15,3 @@ const useThemeBasedValue = <T>(lightValue: T, darkValue: T): T => {
 
   return value;
 };
-
-export default useThemeBasedValue;

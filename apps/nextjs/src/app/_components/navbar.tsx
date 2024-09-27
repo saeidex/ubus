@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IconMenu } from "@tabler/icons-react";
 
-import useThemeBasedValue from "@ubus/hooks/useThemeBasedValue";
+import { useThemeBasedValue } from "@ubus/hooks";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 
