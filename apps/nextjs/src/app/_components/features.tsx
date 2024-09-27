@@ -40,7 +40,7 @@ export const KeyFeatures = () => {
       <Image
         alt="bus picture"
         className="h-36 w-fit lg:row-span-2 lg:h-auto xl:row-span-3 xl:pl-4"
-        src={"/bus.svg"}
+        src={"/bus.png"}
         height={563}
         width={699}
       />
