@@ -106,7 +106,7 @@ export const Footer = () => {
           </div>
           <div className="grid gap-9 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {footerMenuItems.map((item) => (
-              <FooterMenu menu={item} />
+              <FooterMenu menu={item} key={item.title} />
             ))}
           </div>
           <Separator />
@@ -128,6 +128,7 @@ const FooterMenu = ({ menu }: { menu: IMenuItem }) => {
           <Link
             className="text-headline-large hover:underline"
             href={{ href: link.href }}
+            key={link.href}
           >
             {link.label}
           </Link>
