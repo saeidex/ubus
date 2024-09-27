@@ -25,6 +25,7 @@
     "@trpc/server": "catalog:",
     "@ubus/api": "workspace:*",
     "@ubus/auth": "workspace:*",
+    "@ubus/configs": "workspace:*",
     "@ubus/db": "workspace:*",
     "@ubus/hooks": "workspace:*",
     "@ubus/ui": "workspace:*",
