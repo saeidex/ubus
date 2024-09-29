@@ -61,7 +61,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       >
         <ThemeProvider attribute="class" enableSystem>
           <TRPCReactProvider>
-            <ScrollArea className="mx-auto h-full w-full">
+            <ScrollArea className="h-full w-full">
               {props.children}
               <ScrollBar />
             </ScrollArea>

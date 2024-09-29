@@ -25,7 +25,10 @@ function ThemeToggle({ className }: React.HTMLAttributes<HTMLDivElement>) {
             <span className="sr-only">Toggle theme</span>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent
+          align="end"
+          className="border-outline-variant bg-surface text-on-surface"
+        >
           <DropdownMenuItem onClick={() => setTheme("light")}>
             Light
           </DropdownMenuItem>

@@ -21,7 +21,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground !px-3",
         link: "!px-3 text-primary underline-offset-4 hover:underline",
         withIcon:
-          "gap-2 bg-primary-container p-0 !pr-[22px] pl-6 text-on-primary-container shadow *:fill-on-primary-container hover:bg-primary-container/90 dark:bg-primary dark:text-primary-foreground dark:*:fill-on-primary dark:hover:bg-primary/90",
+          "gap-2 bg-primary-container p-0 !pl-[22px] pr-6 text-on-primary-container shadow *:fill-on-primary-container hover:bg-primary-container/90 dark:bg-primary dark:text-primary-foreground dark:*:fill-on-primary dark:hover:bg-primary/90",
       },
       size: {
         sm: "h-8 px-3 text-xs",

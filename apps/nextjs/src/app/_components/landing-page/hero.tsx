@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { IconArrowRight, IconMouse } from "@tabler/icons-react";
@@ -24,12 +22,7 @@ export const Hero = ({ className }: { className?: string }) => {
             Welcome to the IUBAT Bus Tracking System. Access live bus locations,
             schedules, and important updates all in one place.
           </h3>
-          <Link href={{ href: "/dashboard" }}>
-            <Button variant={"withIcon"}>
-              Track now
-              <IconArrowRight stroke={2} size={20} />
-            </Button>
-          </Link>
+          <CTA />
         </div>
         <div className="relative before:absolute before:inset-0 before:hidden before:h-full before:w-full before:bg-gradient-to-br before:from-background before:via-background/80 before:to-transparent sm:-z-50 sm:-mt-40 before:sm:block md:z-auto md:mt-0 before:md:hidden">
           <Image
@@ -48,5 +41,16 @@ export const Hero = ({ className }: { className?: string }) => {
         </div>
       </div>
     </section>
+  );
+};
+
+export const CTA = () => {
+  return (
+    <Link href={{ pathname: "/signup" }}>
+      <Button variant={"withIcon"}>
+        <IconArrowRight stroke={2} size={20} />
+        Track now
+      </Button>
+    </Link>
   );
 };

@@ -4,6 +4,7 @@ import type {
   Session as NextAuthSession,
 } from "next-auth";
 import { skipCSRFCheck } from "@auth/core";
+import Google from "@auth/core/providers/google";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import Github from "next-auth/providers/github";
 
@@ -38,7 +39,7 @@ export const authConfig = {
       }
     : {}),
   secret: env.AUTH_SECRET,
-  providers: [Github],
+  providers: [Github, Google],
   callbacks: {
     session: (opts) => {
       if (!("user" in opts))
@@ -51,6 +52,9 @@ export const authConfig = {
           id: opts.user.id,
         },
       };
+    },
+    redirect: ({ baseUrl }) => {
+      return baseUrl;
     },
   },
 } satisfies NextAuthConfig;

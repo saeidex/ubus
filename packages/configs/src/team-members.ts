@@ -24,6 +24,7 @@ export const teamMembers: ITeamMember[] = [
     name: "Muhammad Rony",
     usernames: {
       github: "r-ony-s",
+      x: "Rony270015",
     },
   },
   {
