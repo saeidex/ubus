@@ -41,7 +41,7 @@ const SignInWithButton = ({
           await signIn(provider);
         }}
         variant="ghost"
-        className="focus:primary/50 group h-12 w-full border-2 border-outline px-6 transition duration-300 hover:border-primary active:bg-primary/20 dark:active:bg-primary/70"
+        className="focus:primary/50 group h-12 w-full border-2 border-outline-variant bg-surface-container px-6 transition duration-300 hover:bg-surface-container-high hover:shadow-lg active:bg-primary/20 dark:active:bg-primary/70"
       >
         <div className="flex items-center justify-center space-x-4">
           {icon}

@@ -8,7 +8,7 @@ import {
 
 const SignInPage = () => {
   return (
-    <div className="fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-surface-tint px-4 md:px-8">
+    <div className="fixed inset-0 z-50 flex h-full w-full items-center justify-center px-4 md:px-8">
       <Card className="relative max-w-lg rounded-xl border-outline-variant bg-surface-container-low px-6 text-on-surface shadow-md *:fill-on-surface">
         <CardHeader className="space-y-4 text-center">
           <Logo />
