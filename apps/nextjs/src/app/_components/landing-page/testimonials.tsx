@@ -43,7 +43,7 @@ export const Testimonials = () => {
     Autoplay({ delay: 5000, stopOnInteraction: true }),
   );
   return (
-    <div className="container mb-10 *:select-none lg:my-32">
+    <div className="container mb-16 *:select-none lg:my-32">
       <Carousel
         className="mx-auto w-full max-w-[240px] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-6xl"
         // plugins={[plugin.current]}

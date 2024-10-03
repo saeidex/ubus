@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useThemeBasedValue } from "@ubus/hooks";
 
-export const Logo = () => {
+export const LogoIcon = () => {
   const logoSrc = useThemeBasedValue("ubus.svg", "ubus-dark.svg");
 
   return (

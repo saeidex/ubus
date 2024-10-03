@@ -11,7 +11,7 @@ import { teamMembers } from "@ubus/configs";
 
 export const OurTeam = () => {
   return (
-    <div className="bg-primary-container py-20 *:text-on-primary-container lg:py-32">
+    <div>
       <div className="container flex flex-col gap-10 sm:gap-16">
         <div className="flex flex-col items-center justify-center gap-2 *:text-center sm:gap-4">
           <span className="text-body-large sm:text-headline-small">
@@ -38,7 +38,7 @@ const TeamMemberCard = ({ item }: { item: ITeamMember }) => {
   return (
     <div
       key={item.usernames.github}
-      className="flex flex-col gap-3 overflow-hidden rounded-lg bg-surface-variant pb-5 text-on-surface-variant hover:shadow-lg"
+      className="flex flex-col gap-3 overflow-hidden rounded-lg bg-surface-container-highest pb-5 text-on-surface hover:shadow-lg"
     >
       <div className="aspect-square max-h-full overflow-hidden rounded-lg bg-surface-container-high object-cover">
         <Image

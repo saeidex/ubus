@@ -22,7 +22,7 @@ export const Header = () => {
               Login
             </Button>
           </Link>
-          <Link href={{ pathname: "/signup" }}>
+          <Link href={{ pathname: "/get-started" }}>
             <Button className="hidden md:block">Get started</Button>
           </Link>
           <Button className="md:hidden">

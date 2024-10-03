@@ -71,7 +71,7 @@ importers:
     dependencies:
       '@auth/core':
         specifier: 0.34.2
-        version: 0.34.2
+        version: 0.34.2(nodemailer@6.9.15)
     devDependencies:
       '@types/node':
         specifier: ^20.14.15
@@ -381,10 +381,10 @@ importers:
     dependencies:
       '@auth/core':
         specifier: 0.34.2
-        version: 0.34.2
+        version: 0.34.2(nodemailer@6.9.15)
       '@auth/drizzle-adapter':
         specifier: ^1.4.2
-        version: 1.4.2
+        version: 1.4.2(nodemailer@6.9.15)
       '@t3-oss/env-nextjs':
         specifier: ^0.11.0
         version: 0.11.0(typescript@5.5.4)(zod@3.23.8)
@@ -396,7 +396,7 @@ importers:
         version: 14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-auth:
         specifier: 5.0.0-beta.20
-        version: 5.0.0-beta.20(next@14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 5.0.0-beta.20(next@14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nodemailer@6.9.15)(react@18.3.1)
       react:
         specifier: catalog:react18
         version: 18.3.1
@@ -646,7 +646,7 @@ importers:
         version: 7.35.0(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-react-hooks:
         specifier: rc
-        version: 5.1.0-rc-3edc000d-20240926(eslint@9.9.0(jiti@1.21.6))
+        version: 5.1.0-rc-0751fac7-20241002(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-turbo:
         specifier: ^2.1.1
         version: 2.1.1(eslint@9.9.0(jiti@1.21.6))
@@ -4554,8 +4554,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-react-hooks@5.1.0-rc-3edc000d-20240926:
-    resolution: {integrity: sha512-9E3TnhvxK6OWwG8EQyGlb2V9n0NQ+e1euW3Jj+t3M+6CkoBAKX25OPOn6QLK9Ylxib3xd4houOOUmrvwCSa8Jw==}
+  eslint-plugin-react-hooks@5.1.0-rc-0751fac7-20241002:
+    resolution: {integrity: sha512-9CEhaksLMmjRIpLdm5xazaCvDYsLZ0OKgCBQTyuiP4LvtB1wiQVBVGgQVWF1iC2FZmilFsefdmxUJb0nQl80Yg==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -6266,6 +6266,10 @@ packages:
   node-stream-zip@1.15.0:
     resolution: {integrity: sha512-LN4fydt9TqhZhThkZIVQnF9cwjU3qmUH9h78Mx/K7d3VvfRqqwthLwJEUOEL0QPZ0XQmNN7be5Ggit5+4dq3Bw==}
     engines: {node: '>=0.12.0'}
+
+  nodemailer@6.9.15:
+    resolution: {integrity: sha512-AHf04ySLC6CIfuRtRiEYtGEXgRfa6INgWGluDhnxTZhHSKvrBu7lc1VVchQ0d8nPc4cFaZoPq8vkyNoZr0TpGQ==}
+    engines: {node: '>=6.0.0'}
 
   nopt@5.0.0:
     resolution: {integrity: sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ==}
@@ -8297,7 +8301,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@auth/core@0.34.2':
+  '@auth/core@0.34.2(nodemailer@6.9.15)':
     dependencies:
       '@panva/hkdf': 1.2.1
       '@types/cookie': 0.6.0
@@ -8306,10 +8310,12 @@ snapshots:
       oauth4webapi: 2.11.1
       preact: 10.11.3
       preact-render-to-string: 5.2.3(preact@10.11.3)
+    optionalDependencies:
+      nodemailer: 6.9.15
 
-  '@auth/drizzle-adapter@1.4.2':
+  '@auth/drizzle-adapter@1.4.2(nodemailer@6.9.15)':
     dependencies:
-      '@auth/core': 0.34.2
+      '@auth/core': 0.34.2(nodemailer@6.9.15)
     transitivePeerDependencies:
       - '@simplewebauthn/browser'
       - '@simplewebauthn/server'
@@ -12699,7 +12705,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-react-hooks@5.1.0-rc-3edc000d-20240926(eslint@9.9.0(jiti@1.21.6)):
+  eslint-plugin-react-hooks@5.1.0-rc-0751fac7-20241002(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       eslint: 9.9.0(jiti@1.21.6)
 
@@ -14612,11 +14618,13 @@ snapshots:
 
   netmask@2.0.2: {}
 
-  next-auth@5.0.0-beta.20(next@14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+  next-auth@5.0.0-beta.20(next@14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nodemailer@6.9.15)(react@18.3.1):
     dependencies:
-      '@auth/core': 0.34.2
+      '@auth/core': 0.34.2(nodemailer@6.9.15)
       next: 14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
+    optionalDependencies:
+      nodemailer: 6.9.15
 
   next-themes@0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -14783,6 +14791,9 @@ snapshots:
   node-releases@2.0.18: {}
 
   node-stream-zip@1.15.0: {}
+
+  nodemailer@6.9.15:
+    optional: true
 
   nopt@5.0.0:
     dependencies:

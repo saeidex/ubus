@@ -15,5 +15,10 @@
   },
   "exclude": ["node_modules"],
   "extends": "@ubus/tsconfig/base.json",
-  "include": [".", ".next/types/**/*.ts"]
+  "include": [
+    ".",
+    ".next/types/**/*.ts",
+    "src/app/_components/signin-with-buttons.tsx",
+    "src/app/_components/logo-icon.tsx"
+  ]
 }

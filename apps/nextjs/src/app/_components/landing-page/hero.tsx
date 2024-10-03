@@ -46,7 +46,7 @@ export const Hero = ({ className }: { className?: string }) => {
 
 export const CTA = () => {
   return (
-    <Link href={{ pathname: "/signup" }}>
+    <Link href={{ pathname: "/get-started" }}>
       <Button variant={"withIcon"}>
         <IconArrowRight stroke={2} size={20} />
         Track now
