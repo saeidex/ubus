@@ -3,8 +3,9 @@
 import Image from "next/image";
 
 import { useThemeBasedValue } from "@ubus/hooks";
+import { cn } from "@ubus/ui";
 
-export const LogoIcon = () => {
+export const LogoIcon = ({ className }: { className?: string }) => {
   const logoSrc = useThemeBasedValue("ubus.svg", "ubus-dark.svg");
 
   return (
@@ -13,7 +14,7 @@ export const LogoIcon = () => {
       height={48}
       src={logoSrc}
       loading="lazy"
-      className="mx-auto w-12"
+      className={cn("mx-auto max-h-12 w-auto", className)}
       alt="ubus logo"
     />
   );

@@ -18,7 +18,7 @@
   "include": [
     ".",
     ".next/types/**/*.ts",
-    "src/app/_components/signin-with-buttons.tsx",
+    "src/app/_components/auth-showcase.tsx",
     "src/app/_components/logo-icon.tsx"
   ]
 }
