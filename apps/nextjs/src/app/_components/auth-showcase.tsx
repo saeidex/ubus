@@ -10,7 +10,7 @@ import { signIn } from "@ubus/auth";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 
-import { LogoIcon } from "./logo-icon";
+import { LogoIcon } from "./logo";
 
 interface IAuthShowcaseProps {
   className?: string;

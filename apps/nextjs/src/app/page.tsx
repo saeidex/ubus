@@ -1,16 +1,24 @@
-import { auth } from "@ubus/auth";
+import { Contact } from "./_components/contact";
+import { EssentialFeatures, KeyFeatures } from "./_components/features";
+import { Footer } from "./_components/footer";
+import { LandingHeader } from "./_components/header";
+import { Hero } from "./_components/hero";
+import { OurTeam } from "./_components/our-team";
+import { Testimonials } from "./_components/testimonials";
 
-import { Dashboard } from "./_components/dashboard";
-import LandingPage from "./_components/landing-page";
-
-const HomePage = async () => {
-  const session = await auth();
-
-  if (!session) {
-    return <LandingPage />;
-  }
-
-  return <Dashboard />;
+const HomePage = () => {
+  return (
+    <>
+      <LandingHeader />
+      <Hero />
+      <KeyFeatures />
+      <EssentialFeatures />
+      <Testimonials />
+      <OurTeam />
+      <Contact />
+      <Footer />
+    </>
+  );
 };
 
 export default HomePage;

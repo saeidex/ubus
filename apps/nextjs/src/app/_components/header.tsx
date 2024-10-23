@@ -4,9 +4,13 @@ import { IconMenu } from "@tabler/icons-react";
 import { Button } from "@ubus/ui/button";
 
 import { Logo } from "./logo";
-import { NavBar } from "./navbar";
+import { DashboardNavbar, LandingNavbar } from "./navbar";
 
-export const Header = () => {
+export const DashboardHeader = () => {
+  return <DashboardNavbar />;
+};
+
+export const LandingHeader = () => {
   return (
     <nav className="container border-outline">
       <div className="mx-auto flex h-24 flex-wrap items-center justify-between">
@@ -30,7 +34,7 @@ export const Header = () => {
             <IconMenu />
           </Button>
         </div>
-        <NavBar />
+        <LandingNavbar />
       </div>
     </nav>
   );

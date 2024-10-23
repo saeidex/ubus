@@ -19,6 +19,6 @@
     ".",
     ".next/types/**/*.ts",
     "src/app/_components/auth-showcase.tsx",
-    "src/app/_components/logo-icon.tsx"
+    "src/app/_components/logo.tsx"
   ]
 }
