@@ -228,7 +228,7 @@ importers:
         specifier: 'catalog:'
         version: 5.5.4
 
-  apps/nextjs:
+  apps/next:
     dependencies:
       '@conform-to/react':
         specifier: ^1.2.2
