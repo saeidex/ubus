@@ -17,6 +17,7 @@
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "lint:ws": "pnpm dlx sherif@latest",
     "typecheck": "turbo run typecheck",
+    "turbo:gen": "turbo gen init",
     "turbo:restart": "turbo daemon restart",
     "ui-add": "turbo run ui-add"
   },
