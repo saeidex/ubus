@@ -32,8 +32,8 @@ export const LandingHeader = async () => {
               Login
             </Button>
           </Link>
-          <Link href={{ pathname: session ? "dashboard" : "/get-started" }}>
-            <Button>{session ? "Open dashboard" : "Get started"}</Button>
+          <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
+            <Button>{session ? "Dashboard" : "Get started"}</Button>
           </Link>
         </div>
         <LandingNavbar />

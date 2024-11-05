@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconArrowRight, IconMouse } from "@tabler/icons-react";
 
+import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 
@@ -44,12 +45,14 @@ export const Hero = ({ className }: { className?: string }) => {
   );
 };
 
-export const CTA = () => {
+export const CTA = async () => {
+  const session = await auth();
+
   return (
-    <Link href={{ pathname: "/get-started" }}>
+    <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
       <Button variant={"withIcon"}>
         <IconArrowRight stroke={2} size={20} />
-        Track now
+        {session ? "Go to dashboard" : "Track now"}
       </Button>
     </Link>
   );
