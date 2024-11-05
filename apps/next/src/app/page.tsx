@@ -10,12 +10,14 @@ const HomePage = () => {
   return (
     <>
       <LandingHeader />
-      <Hero />
-      <KeyFeatures />
-      <EssentialFeatures />
-      <Testimonials />
-      <OurTeam />
-      <Contact />
+      <main>
+        <Hero />
+        <KeyFeatures />
+        <EssentialFeatures />
+        <Testimonials />
+        <OurTeam />
+        <Contact />
+      </main>
       <Footer />
     </>
   );
