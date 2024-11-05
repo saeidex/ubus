@@ -87,15 +87,18 @@ const essentialFeatures = [
 
 export const EssentialFeatures = () => {
   return (
-    <div className="container grid gap-3 py-8 lg:my-32 lg:grid-cols-6 lg:gap-y-12">
-      <h2 className="text-headline-large font-bold leading-7 sm:text-display-medium lg:col-span-3 lg:self-end">
+    <div className="container grid gap-4 py-8 lg:my-32 lg:grid-cols-6 lg:gap-y-12">
+      <h2 className="text-headline-large font-bold sm:text-display-medium lg:col-span-3 lg:self-end">
         Explore Our Essential Bus Tracking Features
       </h2>
-      <p className="text-balance pb-4 text-body-large md:pb-6 lg:col-span-3 lg:pb-0 lg:text-justify lg:text-base">
+      <p className="pb-4 text-body-large md:text-balance md:pb-6 lg:col-span-3 lg:pb-0 lg:text-justify lg:text-base">
         Our bus tracking system offers three key features designed for student
-        convenience. Access real-time bus locations, view schedules, and stay
-        updated on important announcements all in one place. Experience seamless
-        navigation and timely information at your fingertips.
+        convenience.
+        <span className="hidden md:inline">
+          Access real-time bus locations, view schedules, and stay updated on
+          important announcements all in one place. Experience seamless
+          navigation and timely information at your fingertips.
+        </span>
       </p>
       {essentialFeatures.map((item) => (
         <Card key={item.title} className="lg:col-span-2">
