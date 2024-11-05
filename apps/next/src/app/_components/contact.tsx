@@ -40,10 +40,10 @@ export const Contact = () => {
       className="container my-16 flex max-w-2xl flex-col gap-8 lg:my-32 lg:gap-16"
     >
       <div className="flex flex-col gap-3">
-        <h2 className="text-center text-headline-large font-bold md:text-display-large">
+        <h2 className="text-center text-display-large font-bold">
           Contact our team
         </h2>
-        <p className="text-center text-body-small md:text-headline-small">
+        <p className="text-center text-headline-small">
           Got any questions about the product or scaling on our platform?
         </p>
       </div>
