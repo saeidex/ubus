@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { mqttClient as client } from "./client";
 import { getBusLocationTopic } from "./topics";
 
-export const useMqttSubscription = (busId: string) => {
+export const useBusLocationQuery = (busId: string) => {
   const topic = getBusLocationTopic(busId);
 
   return useQuery({

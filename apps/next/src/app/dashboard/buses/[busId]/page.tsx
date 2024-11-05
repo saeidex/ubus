@@ -1,6 +1,6 @@
 "use client";
 
-import { MqttProvider, useMqttSubscription } from "@ubus/mqtt";
+import { MqttProvider, useBusLocationQuery } from "@ubus/mqtt";
 
 interface BusLocationPageProps {
   params: {
@@ -17,7 +17,7 @@ const BusLocationPage = (props: BusLocationPageProps) => {
 };
 
 const BusLocationContent = (props: BusLocationPageProps) => {
-  const { data: location, error } = useMqttSubscription(props.params.busId);
+  const { data: location, error } = useBusLocationQuery(props.params.busId);
 
   // if (isLoading) return <p>Loading...</p>;
   if (error)
