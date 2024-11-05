@@ -8,7 +8,11 @@
     "AUTH_GOOGLE_SECRET",
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
-    "PORT"
+    "PORT",
+    "NEXT_PUBLIC_MQTT_HOST",
+    "NEXT_PUBLIC_MQTT_USERNAME",
+    "NEXT_PUBLIC_MQTT_PASSWORD",
+    "NEXT_PUBLIC_MQTT_TOPIC"
   ],
   "globalPassThroughEnv": [
     "NODE_ENV",

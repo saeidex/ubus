@@ -6,25 +6,28 @@ import { getBusLocationTopic } from "./topics";
 export const useMqttSubscription = (busId: string) => {
   const topic = getBusLocationTopic(busId);
 
-  return useQuery<string, Error>({
+  return useQuery({
     queryKey: [topic],
-    queryFn: async () => {
-      return new Promise<string>((resolve) => {
-        client.on("message", (receivedTopic, message) => {
+    queryFn: () => {
+      return new Promise<string>((resolve, reject) => {
+        client.on("message", (receivedTopic, payload) => {
           if (receivedTopic === topic) {
-            resolve(message.toString());
+            resolve(payload.toString());
           }
         });
 
         client.subscribe(topic, { qos: 1 }, (error) => {
           if (error) {
-            console.error("Subscribe error: ", error);
-          } else {
-            console.log(`Subscribed to topic: ${topic}`);
+            reject(
+              new Error(
+                `Subscribe error: ${error.message || "Mqtt Subscription Error"}`,
+              ),
+            );
           }
         });
       });
     },
+    refetchInterval: 1000 * 3,
     staleTime: 1000 * 60,
   });
 };

@@ -28,6 +28,7 @@
     "@ubus/configs": "workspace:*",
     "@ubus/db": "workspace:*",
     "@ubus/hooks": "workspace:*",
+    "@ubus/mqtt": "workspace:^",
     "@ubus/ui": "workspace:*",
     "@ubus/validators": "workspace:*",
     "embla-carousel-autoplay": "^8.3.0",

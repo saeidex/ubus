@@ -269,6 +269,9 @@ importers:
       '@ubus/hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
+      '@ubus/mqtt':
+        specifier: workspace:^
+        version: link:../../packages/mqtt
       '@ubus/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -550,6 +553,9 @@ importers:
       mqtt:
         specifier: ^5.10.1
         version: 5.10.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
     devDependencies:
       '@ubus/eslint-config':
         specifier: workspace:*
