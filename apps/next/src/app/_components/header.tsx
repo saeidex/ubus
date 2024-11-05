@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { IconMenu } from "@tabler/icons-react";
 
 import { Button } from "@ubus/ui/button";
 
@@ -20,19 +19,15 @@ export const LandingHeader = () => {
         <div className="flex gap-1.5 md:order-2">
           <Link href={{ pathname: "/login" }}>
             <Button
-              className="hidden text-on-surface hover:text-primary md:block"
+              className="bg-surface-bright text-on-surface hover:text-primary hover:no-underline lg:bg-inherit lg:hover:underline"
               variant="link"
             >
               Login
             </Button>
           </Link>
           <Link href={{ pathname: "/get-started" }}>
-            <Button className="hidden md:block">Get started</Button>
+            <Button>Get started</Button>
           </Link>
-          <Button className="md:hidden">
-            <span className="sr-only">Open main menu</span>
-            <IconMenu />
-          </Button>
         </div>
         <LandingNavbar />
       </div>

@@ -33,7 +33,7 @@ const keyFeatures = [
 
 export const KeyFeatures = () => {
   return (
-    <div className="container grid grid-cols-2 items-center py-8">
+    <div id="features" className="container grid grid-cols-2 items-center py-8">
       <h2 className="text-headline-large font-bold leading-7 sm:text-display-medium lg:self-end">
         Discover the key benefits
       </h2>

@@ -16,8 +16,8 @@ export const DashboardNavbar = () => {
 
 export const LandingNavbar = () => {
   return (
-    <div className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto">
-      <ul className="mt-4 flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:gap-8 md:p-0">
+    <div className="hidden w-full items-center justify-between md:order-1 md:w-auto lg:flex">
+      <ul className="mt-4 flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:gap-4 md:p-0 lg:gap-8">
         {landingNavLinks.map((link) => (
           <li key={link.href}>
             <NavLink className="px-0" link={link} />

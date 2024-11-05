@@ -35,7 +35,10 @@ const formItems: IFromItem[] = [
 
 export const Contact = () => {
   return (
-    <div className="container my-16 flex max-w-2xl flex-col gap-8 lg:my-32 lg:gap-16">
+    <div
+      id="contact"
+      className="container my-16 flex max-w-2xl flex-col gap-8 lg:my-32 lg:gap-16"
+    >
       <div className="flex flex-col gap-3">
         <h2 className="text-center text-headline-large font-bold md:text-display-large">
           Contact our team

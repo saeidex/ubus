@@ -3,79 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import type { IMenuItem } from "@ubus/configs";
+import { footerMenuItems } from "@ubus/configs";
 import { useThemeBasedValue } from "@ubus/hooks";
 import { Separator } from "@ubus/ui/separator";
-
-export interface IMenuItem {
-  title: string;
-  links: {
-    label: string;
-    href: string;
-  }[];
-}
-
-const footerMenuItems: IMenuItem[] = [
-  {
-    title: "Resources",
-    links: [
-      {
-        label: "Newsletter",
-        href: "",
-      },
-      {
-        label: "Blog",
-        href: "",
-      },
-      {
-        label: "Support",
-        href: "",
-      },
-    ],
-  },
-  {
-    title: "Socials",
-    links: [
-      {
-        label: "Facebook",
-        href: "",
-      },
-      {
-        label: "LinkedIn",
-        href: "",
-      },
-      {
-        label: "GitHub",
-        href: "",
-      },
-    ],
-  },
-  {
-    title: "Important",
-    links: [
-      {
-        label: "Settings",
-        href: "",
-      },
-      {
-        label: "Contact",
-        href: "",
-      },
-    ],
-  },
-  {
-    title: "Legals",
-    links: [
-      {
-        label: "License",
-        href: "",
-      },
-      {
-        label: "Privacy",
-        href: "",
-      },
-    ],
-  },
-];
 
 export const Footer = () => {
   const logoSrc = useThemeBasedValue("ubus.svg", "ubus-dark.svg");

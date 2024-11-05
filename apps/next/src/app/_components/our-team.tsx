@@ -11,7 +11,7 @@ import { teamMembers } from "@ubus/configs";
 
 export const OurTeam = () => {
   return (
-    <div>
+    <div id="our-team">
       <div className="container flex flex-col gap-10 sm:gap-16">
         <div className="flex flex-col items-center justify-center gap-2 *:text-center sm:gap-4">
           <span className="text-body-large sm:text-headline-small">

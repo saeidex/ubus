@@ -17,6 +17,10 @@ export const landingNavLinks: INavLink[] = [
     href: "#testimonials",
   },
   {
+    label: "Our team",
+    href: "#our-team",
+  },
+  {
     label: "Contact",
     href: "#contact",
   },
