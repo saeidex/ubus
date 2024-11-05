@@ -28,6 +28,6 @@ export const useBusLocationQuery = (busId: string) => {
       });
     },
     refetchInterval: 1000 * 3,
-    staleTime: 1000 * 60,
+    staleTime: Infinity,
   });
 };
