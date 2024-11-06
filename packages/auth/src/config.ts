@@ -54,7 +54,7 @@ export const authConfig = {
       };
     },
     redirect: ({ baseUrl }) => {
-      return baseUrl;
+      return `${baseUrl}/dashboard`;
     },
   },
 } satisfies NextAuthConfig;
