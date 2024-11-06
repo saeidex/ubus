@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IconArrowRight, IconMouse } from "@tabler/icons-react";
+import { IconArrowRight, IconMouse, IconTestPipe } from "@tabler/icons-react";
 
 import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
@@ -49,11 +49,25 @@ export const CTA = async () => {
   const session = await auth();
 
   return (
-    <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
-      <Button variant={"withIcon"}>
-        <IconArrowRight stroke={2} size={20} />
-        {session ? "Go to dashboard" : "Track now"}
-      </Button>
-    </Link>
+    <div className="flex flex-nowrap gap-2">
+      <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
+        <Button variant={"withIcon"}>
+          <IconArrowRight stroke={2} size={20} />
+          {session ? "Go to dashboard" : "Track now"}
+        </Button>
+      </Link>
+      <Link href={{ pathname: "/dashboard/test/1" }}>
+        <Button
+          className={cn(
+            "gap-2 bg-surface-bright text-primary hover:text-on-surface hover:no-underline",
+            session ?? "hidden",
+          )}
+          variant="ghost"
+        >
+          <IconTestPipe />
+          Test route
+        </Button>
+      </Link>
+    </div>
   );
 };
