@@ -18,10 +18,15 @@ const BusLocationPage = (props: BusLocationPageProps) => {
 };
 
 export const Location = (props: { busId: string }) => {
-  const { data: location, isLoading, error } = useBusLocationQuery(props.busId);
+  const {
+    data: location,
+    isLoading,
+    isError,
+    error,
+  } = useBusLocationQuery(props.busId);
 
   if (isLoading) return <p>Waiting for bus location...</p>;
-  if (error)
+  if (isError)
     return (
       <p className="grid h-dvh place-content-center place-items-center gap-4 text-destructive">
         An error has occurred: {error.message}
