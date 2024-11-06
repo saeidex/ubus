@@ -35,7 +35,7 @@ export const Location = (props: { busId: string }) => {
 
   if (location) {
     return (
-      <div className="rounded-sm bg-destructive p-4 text-destructive-foreground">
+      <div className="max-w-[90dvw] overflow-x-scroll rounded-sm bg-destructive p-4 text-destructive-foreground">
         <pre>{JSON.stringify(JSON.parse(location), null, 2)}</pre>
       </div>
     );
