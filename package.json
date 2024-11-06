@@ -16,9 +16,9 @@
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "lint:ws": "pnpm dlx sherif@latest",
-    "typecheck": "turbo run typecheck",
     "turbo:gen": "turbo gen init",
     "turbo:restart": "turbo daemon restart",
+    "typecheck": "turbo run typecheck",
     "ui-add": "turbo run ui-add"
   },
   "prettier": "@ubus/prettier-config",

@@ -32,7 +32,10 @@ export const LandingHeader = async () => {
               Login
             </Button>
           </Link>
-          <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
+          <Link
+            className="hidden sm:inline"
+            href={{ pathname: session ? "/dashboard" : "/get-started" }}
+          >
             <Button>{session ? "Dashboard" : "Get started"}</Button>
           </Link>
         </div>
