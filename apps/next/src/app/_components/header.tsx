@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import Link from "next/link";
 
-import { auth } from "@ubus/auth";
+// import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 
@@ -11,8 +12,9 @@ export const DashboardHeader = () => {
   return <DashboardNavbar />;
 };
 
-export const LandingHeader = async () => {
-  const session = await auth();
+export const LandingHeader = () => {
+  // const session = await auth();
+  const session = true;
 
   return (
     <nav className="container border-outline">

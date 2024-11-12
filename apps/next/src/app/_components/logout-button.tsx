@@ -3,7 +3,7 @@
 import { IconLogout } from "@tabler/icons-react";
 
 import type { ButtonProps } from "@ubus/ui/button";
-import { signOut } from "@ubus/auth";
+// import { signOut } from "@ubus/auth";
 import { Button } from "@ubus/ui/button";
 
 interface LogoutButtonProps extends ButtonProps {
@@ -18,9 +18,9 @@ export const LogoutButton = ({
     <form className="contents">
       <Button
         {...props}
-        formAction={async () => {
+        formAction={() => {
           "use server";
-          await signOut();
+          // await signOut();
         }}
       >
         {withIcon && <IconLogout className="mr-2" />}
