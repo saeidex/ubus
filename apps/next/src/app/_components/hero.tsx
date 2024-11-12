@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import Image from "next/image";
 import Link from "next/link";
 import { IconArrowRight, IconMouse, IconTestPipe } from "@tabler/icons-react";
 
-import { auth } from "@ubus/auth";
+// import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 
@@ -45,8 +46,9 @@ export const Hero = ({ className }: { className?: string }) => {
   );
 };
 
-export const CTA = async () => {
-  const session = await auth();
+export const CTA = () => {
+  // const session = await auth();
+  const session = true;
 
   return (
     <div className="flex flex-nowrap gap-2">

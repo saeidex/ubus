@@ -6,8 +6,6 @@ import { cn } from "@ubus/ui";
 import { ThemeProvider, ThemeToggle } from "@ubus/ui/theme";
 import { Toaster } from "@ubus/ui/toast";
 
-import { TRPCReactProvider } from "~/trpc/react";
-
 import "~/app/globals.css";
 
 import { ScrollArea, ScrollBar } from "@ubus/ui/scroll-area";
@@ -61,12 +59,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         )}
       >
         <ThemeProvider attribute="class" enableSystem>
-          <TRPCReactProvider>
-            <ScrollArea className="h-full w-full">
-              {props.children}
-              <ScrollBar />
-            </ScrollArea>
-          </TRPCReactProvider>
+          <ScrollArea className="h-full w-full">
+            {props.children}
+            <ScrollBar />
+          </ScrollArea>
           <ThemeToggle className="fixed bottom-4 right-4 z-50" />
           <Toaster />
           <TailwindIndicator />

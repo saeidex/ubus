@@ -6,7 +6,7 @@ import {
   IconBrandGoogleFilled,
 } from "@tabler/icons-react";
 
-import { signIn } from "@ubus/auth";
+// import { signIn } from "@ubus/auth";
 import { cn } from "@ubus/ui";
 import { Button } from "@ubus/ui/button";
 
@@ -76,7 +76,7 @@ const ContinueWithGoogle = () => {
 
 const ContinueWithButton = ({
   icon,
-  provider,
+  // provider,
   children,
 }: {
   icon: ReactNode;
@@ -86,9 +86,9 @@ const ContinueWithButton = ({
   return (
     <form>
       <Button
-        formAction={async () => {
+        formAction={() => {
           "use server";
-          await signIn(provider);
+          // await signIn(provider);
         }}
         variant="ghost"
         className="focus:primary/50 group h-12 w-full border-2 border-outline-variant bg-surface-container px-6 transition duration-300 hover:bg-surface-container-high hover:shadow-lg active:bg-primary/20 dark:active:bg-primary/70"
