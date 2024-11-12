@@ -18,14 +18,8 @@ const BusLocationPage = (props: BusLocationPageProps) => {
 };
 
 export const Location = (props: { busId: string }) => {
-  const {
-    data: location,
-    isLoading,
-    isError,
-    error,
-  } = useBusLocationQuery(props.busId);
+  const { data: location, isError, error } = useBusLocationQuery(props.busId);
 
-  if (isLoading) return <p>Waiting for bus location...</p>;
   if (isError)
     return (
       <p className="grid h-dvh place-content-center place-items-center gap-4 text-destructive">
@@ -33,13 +27,11 @@ export const Location = (props: { busId: string }) => {
       </p>
     );
 
-  if (location) {
-    return (
-      <div className="max-w-[90dvw] overflow-x-scroll rounded-sm bg-destructive p-4 text-destructive-foreground">
-        <pre>{JSON.stringify(JSON.parse(location), null, 2)}</pre>
-      </div>
-    );
-  }
+  return (
+    <div className="max-w-[90dvw] overflow-x-scroll rounded-sm bg-destructive p-4 text-destructive-foreground">
+      <pre>{JSON.stringify(location)}</pre>
+    </div>
+  );
 };
 
 export default BusLocationPage;
