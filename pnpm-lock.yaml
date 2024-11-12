@@ -569,6 +569,12 @@ importers:
       react:
         specifier: ^18.3.1
         version: 18.3.1
+      superjson:
+        specifier: 2.2.1
+        version: 2.2.1
+      zustand:
+        specifier: ^5.0.1
+        version: 5.0.1(@types/react@18.3.12)(react@18.3.1)
     devDependencies:
       '@ubus/eslint-config':
         specifier: workspace:*
@@ -730,7 +736,7 @@ importers:
         version: 7.35.0(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-react-hooks:
         specifier: rc
-        version: 5.1.0-rc-33c7bd9a-20241104(eslint@9.9.0(jiti@1.21.6))
+        version: 5.1.0-rc-ed15d500-20241110(eslint@9.9.0(jiti@1.21.6))
       eslint-plugin-turbo:
         specifier: ^2.1.1
         version: 2.1.1(eslint@9.9.0(jiti@1.21.6))
@@ -4943,8 +4949,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
 
-  eslint-plugin-react-hooks@5.1.0-rc-33c7bd9a-20241104:
-    resolution: {integrity: sha512-9apCYmPWXFpdOlKX299C0A5WZRzyCw8sPtIadYlWEeD+AXc/7OhwfxcV9xm9OruP2tS0GcrmvrwLmz0+6/whoQ==}
+  eslint-plugin-react-hooks@5.1.0-rc-ed15d500-20241110:
+    resolution: {integrity: sha512-haCpY5fh8E4E1WOSg+KvEC0nX2mN9OuEzpihogf6HL8XTo7LIrb8n5foJxwI4NvhGAhD5z9joGrtSY4pTH4x3Q==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -8819,6 +8825,24 @@ packages:
 
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
+  zustand@5.0.1:
+    resolution: {integrity: sha512-pRET7Lao2z+n5R/HduXMio35TncTlSW68WsYBq2Lg1ASspsNGjpwLAsij3RpouyV6+kHMwwwzP0bZPD70/Jx/w==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -13484,7 +13508,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-react-hooks@5.1.0-rc-33c7bd9a-20241104(eslint@9.9.0(jiti@1.21.6)):
+  eslint-plugin-react-hooks@5.1.0-rc-ed15d500-20241110(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
       eslint: 9.9.0(jiti@1.21.6)
 
@@ -17930,3 +17954,8 @@ snapshots:
       readable-stream: 4.5.2
 
   zod@3.23.8: {}
+
+  zustand@5.0.1(@types/react@18.3.12)(react@18.3.1):
+    optionalDependencies:
+      '@types/react': 18.3.12
+      react: 18.3.1
