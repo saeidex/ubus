@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { useBusLocationQuery } from "@ubus/mqtt";
 
 interface BusLocationPageProps {
@@ -9,6 +11,14 @@ interface BusLocationPageProps {
 }
 
 const BusLocationPage = (props: BusLocationPageProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <div className="grid h-dvh place-content-center place-items-center gap-4">
       <h1>Bus Location</h1>
