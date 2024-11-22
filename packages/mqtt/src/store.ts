@@ -1,27 +1,27 @@
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { createStore } from "zustand/vanilla";
 
 import type { BusData } from "./types";
 
 interface MqttStore {
   data: BusData;
-  setData: (topic: string, data: BusData) => void;
+  setData: (data: BusData) => void;
 }
 
-export const useMqttStore = createStore<MqttStore>()(
+export const useMqttStore = create<MqttStore>()(
   persist(
     (set) => ({
       data: {
         bus_id: "",
-        latitude: "",
-        longitude: "",
+        latitude: 0,
+        longitude: 0,
         timestamp: "",
-        heading: "",
-        speed: "",
+        speed: 0,
+        heading: 0,
       },
-      setData: (topic, data) =>
-        set((state) => ({
-          data: { ...state.data, [topic]: data },
+      setData: (data) =>
+        set(() => ({
+          data: { ...data },
         })),
     }),
     {

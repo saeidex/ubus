@@ -1,8 +1,8 @@
 export interface BusData {
   bus_id: string;
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
   timestamp: string;
-  speed: string;
-  heading: string;
+  speed: number;
+  heading: number;
 }

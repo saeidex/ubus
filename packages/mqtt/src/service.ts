@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import SuperJSON from "superjson";
 
 import type { BusData } from "./types";
 import { mqttClient as client } from "./client";
@@ -17,8 +16,8 @@ export const useBusLocationQuery = (busId: string) => {
       return new Promise<BusData>((resolve, reject) => {
         client.on("message", (receivedTopic, payload) => {
           if (receivedTopic === topic) {
-            setData(topic, SuperJSON.parse<BusData>(payload.toString()));
-            resolve(SuperJSON.parse<BusData>(payload.toString()));
+            setData(JSON.parse(payload.toString()) as BusData);
+            resolve(JSON.parse(payload.toString()) as BusData);
           }
         });
 

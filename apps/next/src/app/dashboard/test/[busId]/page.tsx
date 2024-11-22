@@ -18,7 +18,7 @@ const BusLocationPage = (props: BusLocationPageProps) => {
 };
 
 export const Location = (props: { busId: string }) => {
-  const { data: location, isError, error } = useBusLocationQuery(props.busId);
+  const { data, isError, error } = useBusLocationQuery(props.busId);
 
   if (isError)
     return (
@@ -29,7 +29,7 @@ export const Location = (props: { busId: string }) => {
 
   return (
     <div className="max-w-[90dvw] overflow-x-scroll rounded-sm bg-destructive p-4 text-destructive-foreground">
-      <pre>{JSON.stringify(location)}</pre>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
