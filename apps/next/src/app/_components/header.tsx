@@ -8,8 +8,8 @@ import { Button } from "@ubus/ui/button";
 import { Logo } from "./logo";
 import { DashboardNavbar, LandingNavbar } from "./navbar";
 
-export const DashboardHeader = () => {
-  return <DashboardNavbar />;
+export const DashboardHeader = ({ className }: { className?: string }) => {
+  return <DashboardNavbar className={className} />;
 };
 
 export const LandingHeader = () => {

@@ -1,15 +1,38 @@
-import { landingNavLinks } from "@ubus/configs";
+"use client";
 
-import { LogoutButton } from "./logout-button";
+import { useEffect, useState } from "react";
+
+import { landingNavLinks } from "@ubus/configs";
+import { cn } from "@ubus/ui";
+import { Button } from "@ubus/ui/button";
+
 import { NavLink } from "./navlink";
 import { UserAvatar } from "./user-avatar";
 
-export const DashboardNavbar = () => {
+export const DashboardNavbar = ({ className }: { className?: string }) => {
+  const [mounted, setMounted] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date().toISOString());
+
+  useEffect(() => {
+    setMounted(true);
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date().toISOString());
+    }, 1000);
+
+    return clearInterval(intervalId);
+  }, [currentTime]);
+
+  if (!mounted) return null;
+
   return (
-    <div className="container flex h-20 w-full justify-between">
-      UBus
+    <div
+      className={cn(
+        "container flex h-20 w-full justify-between bg-red-300",
+        className,
+      )}
+    >
+      <Button variant="outline">{currentTime}</Button>
       <UserAvatar />
-      <LogoutButton />
     </div>
   );
 };

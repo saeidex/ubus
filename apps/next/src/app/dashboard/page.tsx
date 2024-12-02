@@ -1,7 +1,6 @@
-import { DashboardHeader } from "../_components/header";
 
 const Dashboard = () => {
-  return <DashboardHeader />;
+  return <div>HEllo world</div>;
 };
 
 export default Dashboard;
