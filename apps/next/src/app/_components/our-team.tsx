@@ -6,8 +6,8 @@ import {
   IconBrandXFilled,
 } from "@tabler/icons-react";
 
-import type { ITeamMember } from "@ubus/configs";
-import { teamMembers } from "@ubus/configs";
+import type { ITeamMember } from "@ubus/configs/team-members";
+import { teamMembers } from "@ubus/configs/team-members";
 
 export const OurTeam = () => {
   return (

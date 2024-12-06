@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ESNext"]
+    "lib": ["DOM", "ESNext", "DOM.Iterable"]
   },
   "exclude": ["node_modules"],
   "extends": "@ubus/tsconfig/internal-package.json",

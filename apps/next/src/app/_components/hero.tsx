@@ -5,7 +5,7 @@ import { IconArrowRight, IconMouse, IconTestPipe } from "@tabler/icons-react";
 
 // import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 
 export const Hero = ({ className }: { className?: string }) => {
   return (
@@ -51,25 +51,41 @@ export const CTA = () => {
   const session = true;
 
   return (
-    <div className="flex flex-nowrap gap-2">
+    <div className="space-y-4">
       <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
         <Button variant={"withIcon"}>
           <IconArrowRight stroke={2} size={20} />
-          {session ? "Go to dashboard" : "Track now"}
+          {session ? "Dashboard" : "Track now"}
         </Button>
       </Link>
-      <Link href={{ pathname: "/dashboard/test/1" }}>
-        <Button
-          className={cn(
-            "gap-2 bg-surface-bright text-primary hover:text-on-surface hover:no-underline",
-            session ?? "hidden",
-          )}
-          variant="ghost"
-        >
-          <IconTestPipe />
-          Test route
-        </Button>
-      </Link>
+      <div className="flex flex-nowrap gap-2">
+        <Link href={{ pathname: "/dashboard/test/1" }}>
+          <Button
+            className={cn(
+              "gap-2 bg-surface-bright text-primary hover:text-on-surface hover:no-underline",
+              session ?? "hidden",
+            )}
+            variant="ghost"
+            size="sm"
+          >
+            <IconTestPipe size={20} />
+            Demo bus data
+          </Button>
+        </Link>
+        <Link href={{ pathname: "/dashboard/map/1" }}>
+          <Button
+            className={cn(
+              "gap-2 bg-surface-bright text-primary hover:text-on-surface hover:no-underline",
+              session ?? "hidden",
+            )}
+            variant="ghost"
+            size="sm"
+          >
+            <IconTestPipe size={20} />
+            Demo map
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };

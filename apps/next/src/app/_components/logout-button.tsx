@@ -2,9 +2,9 @@
 
 import { IconLogout } from "@tabler/icons-react";
 
-import type { ButtonProps } from "@ubus/ui/button";
+import type { ButtonProps } from "@ubus/ui/button-custom";
 // import { signOut } from "@ubus/auth";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 
 interface LogoutButtonProps extends ButtonProps {
   withIcon?: boolean;

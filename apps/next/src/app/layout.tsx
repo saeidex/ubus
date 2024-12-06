@@ -4,7 +4,7 @@ import { GeistMono } from "geist/font/mono";
 
 import { cn } from "@ubus/ui";
 import { ThemeProvider, ThemeToggle } from "@ubus/ui/theme";
-import { Toaster } from "@ubus/ui/toast";
+import { Toaster } from "@ubus/ui/toaster";
 
 import "~/app/globals.css";
 
@@ -63,7 +63,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             {props.children}
             <ScrollBar />
           </ScrollArea>
-          <ThemeToggle className="fixed bottom-4 right-4 z-50" />
+          <ThemeToggle className="fixed bottom-4 right-4 z-[99999]" />
           <Toaster />
           <TailwindIndicator />
         </ThemeProvider>

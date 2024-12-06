@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 
 import { Logo } from "./logo";
 import { DashboardNavbar, LandingNavbar } from "./navbar";

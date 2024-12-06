@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import type { IMenuItem } from "@ubus/configs";
-import { footerMenuItems } from "@ubus/configs";
-import { useThemeBasedValue } from "@ubus/hooks";
+import type { IMenuItem } from "@ubus/configs/footer-config";
+import { footerMenuItems } from "@ubus/configs/footer-config";
+import { useThemeBasedValue } from "@ubus/hooks/use-theme-based-value";
 import { Separator } from "@ubus/ui/separator";
 
 export const Footer = () => {

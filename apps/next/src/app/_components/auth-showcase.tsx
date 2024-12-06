@@ -8,7 +8,7 @@ import {
 
 // import { signIn } from "@ubus/auth";
 import { cn } from "@ubus/ui";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 
 import { LogoIcon } from "./logo";
 

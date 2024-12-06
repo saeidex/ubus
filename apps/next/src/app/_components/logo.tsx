@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { useThemeBasedValue } from "@ubus/hooks";
+import { useThemeBasedValue } from "@ubus/hooks/use-theme-based-value";
 import { cn } from "@ubus/ui";
 
 export const LogoIcon = ({ className }: { className?: string }) => {

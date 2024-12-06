@@ -1,4 +1,4 @@
-import { landingNavLinks } from "@ubus/configs";
+import { landingNavLinks } from "@ubus/configs/nav-config";
 
 import { LogoutButton } from "./logout-button";
 import { NavLink } from "./navlink";

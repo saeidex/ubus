@@ -5,7 +5,14 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "types": "./dist/src/*.d.ts",
+      "default": "./src/*.ts"
+    }
   },
   "scripts": {
     "format": "prettier --check . --ignore-path ../../.gitignore",
@@ -14,9 +21,14 @@
   },
   "prettier": "@ubus/prettier-config",
   "dependencies": {
-    "react": "^18.3.1"
+    "@tanstack/react-query": "^5.62.2",
+    "@ubus/stores": "workspace:^",
+    "date-fns": "^4.1.0",
+    "js-cookie": "^3.0.5",
+    "react": "catalog:react18"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.14.15",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

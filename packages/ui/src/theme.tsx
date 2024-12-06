@@ -27,7 +27,7 @@ function ThemeToggle({ className }: React.HTMLAttributes<HTMLDivElement>) {
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="border-outline-variant bg-surface text-on-surface"
+          className="z-[9999] border-outline-variant bg-surface text-on-surface"
         >
           <DropdownMenuItem onClick={() => setTheme("light")}>
             Light

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { MqttProvider } from "@ubus/mqtt";
+import { DashboardProviders } from "../_components/providers";
 
 interface DashboardLayoutProps {
   children: ReactNode | JSX.Element;
@@ -8,9 +8,9 @@ interface DashboardLayoutProps {
 
 const DashboardLayout = (props: DashboardLayoutProps) => {
   return (
-    <MqttProvider>
+    <DashboardProviders>
       <main className="h-full w-full">{props.children}</main>
-    </MqttProvider>
+    </DashboardProviders>
   );
 };
 

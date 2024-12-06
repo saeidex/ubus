@@ -3,7 +3,7 @@ export interface ITeamMember {
   usernames: { github: string; linkedin?: string; x?: string };
 }
 
-export const teamMembers: ITeamMember[] = [
+export const teamMembers: readonly ITeamMember[] = [
   {
     name: "Hasibur Rahman",
     usernames: {

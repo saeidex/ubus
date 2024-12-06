@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import type { INavLink } from "@ubus/configs";
 import { cn } from "@ubus/ui";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 
 export const NavLink = ({
   link,
@@ -15,7 +15,6 @@ export const NavLink = ({
   link: INavLink;
 }) => {
   const pathname = usePathname();
-
   const handleClick = (href: string) => {
     const element = document.getElementById(href.replace("#", ""));
     const yOffset = -20;

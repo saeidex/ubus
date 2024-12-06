@@ -8,7 +8,7 @@ import { IconMenu } from "@tabler/icons-react";
 
 import { landingNavLinks } from "@ubus/configs";
 import { cn } from "@ubus/ui";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 import { ScrollArea, ScrollBar } from "@ubus/ui/scroll-area";
 import {
   Sheet,

@@ -1,39 +1,90 @@
-import { useQuery } from "@tanstack/react-query";
+"use client";
 
-import type { BusData } from "./types";
+import { useEffect } from "react";
+import { useQueries } from "@tanstack/react-query";
+
+import type { Bus } from "@ubus/configs";
+import type { BusData } from "@ubus/stores/mqtt-store";
+import { buses } from "@ubus/configs";
+import { useMqttStore } from "@ubus/stores/mqtt-store";
+
 import { mqttClient as client } from "./client";
-import { useMqttStore } from "./store";
 import { getBusLocationTopic } from "./topics";
 
-export const useBusLocationQuery = (busId: string) => {
-  const topic = getBusLocationTopic(busId);
-  const data = useMqttStore.getState().data;
+function isBusData(data: unknown): data is BusData {
+  return (
+    typeof data === "object" &&
+    data !== null &&
+    typeof (data as BusData).bus_id === "string" &&
+    typeof (data as BusData).latitude === "number" &&
+    typeof (data as BusData).longitude === "number" &&
+    typeof (data as BusData).timestamp === "string" &&
+    typeof (data as BusData).speed === "number" &&
+    typeof (data as BusData).heading === "number"
+  );
+}
+
+export const useBusLocationsQuery = () => {
   const setData = useMqttStore.getState().setData;
 
-  return useQuery({
-    queryKey: [topic],
-    queryFn: () => {
-      return new Promise<BusData>((resolve, reject) => {
-        client.on("message", (receivedTopic, payload) => {
-          if (receivedTopic === topic) {
-            setData(JSON.parse(payload.toString()) as BusData);
-            resolve(JSON.parse(payload.toString()) as BusData);
-          }
-        });
+  useEffect(() => {
+    const messageHandler = (receivedTopic: string, payload: Buffer) => {
+      try {
+        const parsedData: unknown = JSON.parse(payload.toString());
 
-        client.subscribe(topic, { qos: 1 }, (error) => {
-          if (error) {
-            reject(
-              new Error(
-                `Subscribe error: ${error.message || "Mqtt Subscription Error"}`,
-              ),
-            );
-          }
-        });
+        if (isBusData(parsedData)) {
+          setData(parsedData);
+        } else {
+          console.error(
+            "Received data does not match BusData type",
+            parsedData,
+          );
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error("Error parsing MQTT message:", error.message);
+        } else {
+          console.error("Unknown error parsing MQTT message", String(error));
+        }
+      }
+    };
+
+    buses.forEach((bus: Bus) => {
+      const topic = getBusLocationTopic(bus.id);
+      client.subscribe(topic, { qos: 1 }, (error) => {
+        if (error) {
+          console.error(`Subscribe error for bus ${bus.id}:`, error.message);
+        }
       });
-    },
-    initialData: data,
-    refetchInterval: 1000 * 3,
-    staleTime: Infinity,
+    });
+
+    client.on("message", messageHandler);
+
+    return () => {
+      client.off("message", messageHandler);
+      buses.forEach((bus: Bus) => {
+        const topic = getBusLocationTopic(bus.id);
+        client.unsubscribe(topic);
+      });
+    };
+  }, []);
+
+  return useQueries({
+    queries: buses.map((bus: Bus) => ({
+      queryKey: [`bus-location-${bus.id}`],
+      queryFn: () => {
+        const storeData = useMqttStore.getState().data;
+
+        const currentData = storeData.find(
+          (busData): busData is BusData => busData.bus_id === bus.id,
+        );
+
+        return currentData ?? null;
+      },
+      refetchInterval: 1000,
+      staleTime: 5000,
+      retry: 1,
+      retryDelay: 1000,
+    })),
   });
 };

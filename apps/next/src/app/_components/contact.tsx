@@ -1,5 +1,5 @@
 import { cn } from "@ubus/ui";
-import { Button } from "@ubus/ui/button";
+import { Button } from "@ubus/ui/button-custom";
 import { Input } from "@ubus/ui/input";
 import { Label } from "@ubus/ui/label";
 import { Textarea } from "@ubus/ui/textarea";

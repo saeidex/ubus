@@ -6,7 +6,7 @@ export interface IMenuItem {
   }[];
 }
 
-export const footerMenuItems: IMenuItem[] = [
+export const footerMenuItems: readonly IMenuItem[] = [
   {
     title: "Resources",
     links: [

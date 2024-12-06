@@ -3,12 +3,12 @@
   "style": "new-york",
   "aliases": {
     "utils": "@ubus/ui",
-    "components": "src/",
+    "components": "@ubus/ui",
     "ui": "src/"
   },
   "rsc": true,
   "tailwind": {
-    "config": "./tailwind.config.ts",
+    "config": "../../tooling/tailwind/web.ts",
     "css": "unused.css",
     "baseColor": "zinc",
     "cssVariables": true

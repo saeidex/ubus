@@ -3,7 +3,7 @@ export interface INavLink {
   label: string;
 }
 
-export const landingNavLinks: INavLink[] = [
+export const landingNavLinks: readonly INavLink[] = [
   {
     label: "Home",
     href: "/",
