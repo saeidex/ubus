@@ -65,17 +65,7 @@ export const ControlsLayer = ({ className }: { className?: string }) => {
                 <IconMenu3 />
               </Button>
             </SheetTrigger>
-            <SheetContent
-              onPointerDownOutside={(event) => event.preventDefault()}
-              onInteractOutside={(event) => event.preventDefault()}
-              className="z-[9999] mr-6 mt-20 flex h-fit w-80 flex-col rounded-3xl border border-outline-variant bg-surface-container-highest text-on-surface backdrop-blur-md dark:border-outline"
-            >
-              <SheetHeader>
-                <SheetTitle className="sr-only">Journey Details</SheetTitle>
-                <SheetDescription className="sr-only" />
-              </SheetHeader>
-              <TravelCard />
-            </SheetContent>
+            <TravelCard />
           </div>
         </Sheet>
       </div>
@@ -105,67 +95,76 @@ const TravelCard = () => {
 
   return (
     <>
-      <div className="space-y-4">
-        <Card className="space-y-1 rounded-lg border border-outline p-3">
-          <div className="flex items-center gap-2 font-medium">
-            <IconBuilding className="size-4" />
-            <span className="uppercase">Destination</span>
-          </div>
-          <div className="pb-2 text-headline-medium font-medium opacity-80">
-            <span className="line-clamp-2">
-              International University of business agriculture and technology
-            </span>
-          </div>
-          {duration && (
-            <>
-              <div className="flex items-center gap-1 font-medium">
-                <IconClock className="size-4" />
-                <span>ETA {distance} Meters</span>
-              </div>
-              <span className="text-justify text-display-small">
-                {duration}
-              </span>
-            </>
-          )}
-          <ToggleGroup type="single" className="justify-start pt-2">
-            <ToggleGroupItem value="walk" className="border border-outline">
-              <IconWalk />
-            </ToggleGroupItem>
-            <ToggleGroupItem
-              disabled
-              value="bus"
-              className="border border-outline"
-            >
-              <IconBus />
-            </ToggleGroupItem>
-          </ToggleGroup>
-        </Card>
-
-        <Card className="space-y-1 rounded-lg border border-outline bg-secondary-fixed-dim p-3 text-on-secondary-fixed">
-          <div className="flex items-center justify-between">
+      <SheetContent
+        onPointerDownOutside={(event) => event.preventDefault()}
+        onInteractOutside={(event) => event.preventDefault()}
+        className="z-[9999] my-auto flex h-fit w-full flex-col rounded-3xl border border-outline-variant bg-surface-container-highest px-3 pt-7 text-on-surface backdrop-blur-md dark:border-outline sm:mr-6 sm:mt-20 sm:w-80"
+      >
+        <SheetHeader>
+          <SheetTitle className="sr-only">Journey Details</SheetTitle>
+          <SheetDescription className="sr-only" />
+        </SheetHeader>
+        <div className="space-y-4">
+          <Card className="space-y-1 rounded-lg border border-outline p-3">
             <div className="flex items-center gap-2 font-medium">
-              <IconMapPin className="size-4" />
-              <span className="uppercase">Current Location</span>
+              <IconBuilding className="size-4" />
+              <span className="uppercase">Destination</span>
             </div>
-          </div>
-          <div className="pb-2 text-headline-medium font-medium opacity-80">
-            <span className="line-clamp-2">
-              {reverseGeoData ? reverseGeoData.display_name : "Not found"}
-            </span>
-          </div>
-        </Card>
+            <div className="pb-2 text-headline-medium font-medium opacity-80">
+              <span className="line-clamp-2">
+                International University of business agriculture and technology
+              </span>
+            </div>
+            {duration && (
+              <>
+                <div className="flex items-center gap-1 font-medium">
+                  <IconClock className="size-4" />
+                  <span>ETA {distance} Kilometers</span>
+                </div>
+                <span className="text-justify text-display-small">
+                  {duration}
+                </span>
+              </>
+            )}
+            <ToggleGroup type="single" className="justify-start pt-2">
+              <ToggleGroupItem value="walk" className="border border-outline">
+                <IconWalk />
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                disabled
+                value="bus"
+                className="border border-outline"
+              >
+                <IconBus />
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </Card>
 
-        <Card
-          className="cursor-pointer space-y-1 rounded-lg border border-outline bg-secondary-fixed-dim p-3 text-on-secondary-fixed"
-          onClick={updateUserGeoLocation}
-        >
-          <div className="flex items-center gap-2 font-medium">
-            <IconCurrentLocation className="size-4 text-center" />
-            <span>Update Current Location</span>
-          </div>
-        </Card>
+          <Card className="space-y-1 rounded-lg border border-outline bg-secondary-fixed-dim p-3 text-on-secondary-fixed">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 font-medium">
+                <IconMapPin className="size-4" />
+                <span className="uppercase">Current Location</span>
+              </div>
+            </div>
+            <div className="pb-2 text-headline-medium font-medium opacity-80">
+              <span className="line-clamp-2">
+                {reverseGeoData ? reverseGeoData.display_name : "Not found"}
+              </span>
+            </div>
+          </Card>
 
-        {/* <Card className="space-y-1 rounded-lg border border-outline p-3 bg-secondary">
+          <Card
+            className="cursor-pointer space-y-1 rounded-lg border border-outline bg-secondary-fixed-dim p-3 text-on-secondary-fixed"
+            onClick={updateUserGeoLocation}
+          >
+            <div className="flex items-center gap-2 font-medium">
+              <IconCurrentLocation className="size-4 text-center" />
+              <span>Update Current Location</span>
+            </div>
+          </Card>
+
+          {/* <Card className="space-y-1 rounded-lg border border-outline p-3 bg-secondary">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <IconNavigation className="size-4" />
@@ -175,7 +174,8 @@ const TravelCard = () => {
           </div>
           <p className="ml-6 mt-1 opacity-80">Abdullahpur, Dhaka</p>
         </Card> */}
-      </div>
+        </div>
+      </SheetContent>
     </>
   );
 };

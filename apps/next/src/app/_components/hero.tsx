@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import Image from "next/image";
 import Link from "next/link";
-import { IconArrowRight, IconMouse, IconTestPipe } from "@tabler/icons-react";
+import { IconArrowRight, IconMouse } from "@tabler/icons-react";
 
 // import { auth } from "@ubus/auth";
 import { cn } from "@ubus/ui";
@@ -58,34 +58,6 @@ export const CTA = () => {
           {session ? "Dashboard" : "Track now"}
         </Button>
       </Link>
-      <div className="flex flex-nowrap gap-2">
-        <Link href={{ pathname: "/dashboard/test/1" }}>
-          <Button
-            className={cn(
-              "gap-2 bg-surface-bright text-primary hover:text-on-surface hover:no-underline",
-              session ?? "hidden",
-            )}
-            variant="ghost"
-            size="sm"
-          >
-            <IconTestPipe size={20} />
-            Demo bus data
-          </Button>
-        </Link>
-        <Link href={{ pathname: "/dashboard/map/1" }}>
-          <Button
-            className={cn(
-              "gap-2 bg-surface-bright text-primary hover:text-on-surface hover:no-underline",
-              session ?? "hidden",
-            )}
-            variant="ghost"
-            size="sm"
-          >
-            <IconTestPipe size={20} />
-            Demo map
-          </Button>
-        </Link>
-      </div>
     </div>
   );
 };

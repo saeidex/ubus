@@ -51,7 +51,7 @@ export const TrackNearMeButton = () => {
         size="sm"
       >
         <IconLocation size={14} />
-        Track near me
+        <span className="hidden sm:block">Track near me</span>
       </Button>
 
       <AlertDialog open={openConsentDialog} onOpenChange={setOpenConsentDialog}>

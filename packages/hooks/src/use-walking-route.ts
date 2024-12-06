@@ -51,7 +51,7 @@ export const useWalkingRoute = (
             end: route.duration * 1000,
           });
 
-          setDistance(route.distance.toString());
+          setDistance((route.distance / 1000).toFixed(2).toString());
           setDuration(formatDuration(duration));
         } else {
           setError("No valid routes found in the OSRM response.");

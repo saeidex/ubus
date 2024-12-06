@@ -1,5 +1,6 @@
 "use client";
 
+import type { UseQueryResult } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useQueries } from "@tanstack/react-query";
 
@@ -24,7 +25,7 @@ function isBusData(data: unknown): data is BusData {
   );
 }
 
-export const useBusLocationsQuery = () => {
+export const useBusLocationsQuery = (): UseQueryResult<BusData>[] => {
   const setData = useMqttStore.getState().setData;
 
   useEffect(() => {

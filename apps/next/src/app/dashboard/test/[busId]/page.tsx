@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useBusLocationQuery } from "@ubus/mqtt";
+import { useBusLocationsQuery } from "@ubus/mqtt";
 
 interface BusLocationPageProps {
   params: {
@@ -28,17 +28,22 @@ const BusLocationPage = (props: BusLocationPageProps) => {
 };
 
 export const Location = (props: { busId: string }) => {
-  const { data, isError, error } = useBusLocationQuery(props.busId);
+  const locations = useBusLocationsQuery();
+  const location = locations.find((item) => item.data?.bus_id === props.busId);
+
+  const data = location?.data;
+  const isError = location?.isError;
+  const error = location?.error;
 
   if (isError)
     return (
       <p className="grid h-dvh place-content-center place-items-center gap-4 text-destructive">
-        An error has occurred: {error.message}
+        An error has occurred: {error!.message}
       </p>
     );
 
   return (
-    <div className="max-w-[90dvw] overflow-x-scroll rounded-sm bg-destructive p-4 text-destructive-foreground">
+    <div className="w-[90dvw] overflow-auto rounded-sm bg-destructive p-4 text-destructive-foreground sm:w-full">
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
