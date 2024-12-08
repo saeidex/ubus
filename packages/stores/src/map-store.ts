@@ -1,4 +1,5 @@
 import Cookies from "js-cookie";
+import { ofetch } from "ofetch";
 import { create } from "zustand";
 
 export interface ReverseGeoData {
@@ -96,10 +97,10 @@ const fetchReverseGeoData = async ({
   lng: number;
 }) => {
   try {
-    const response = await fetch(
+    const data = await ofetch<ReverseGeoData>(
       `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`,
     );
-    const data = (await response.json()) as ReverseGeoData;
+
     return data;
   } catch {
     throw new Error("Location data not found");

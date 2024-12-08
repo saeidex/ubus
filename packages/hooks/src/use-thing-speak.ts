@@ -1,5 +1,6 @@
 import type { UseQueryResult } from "@tanstack/react-query";
 import { useQuery } from "@tanstack/react-query";
+import { ofetch } from "ofetch";
 
 import { env } from "./env";
 
@@ -29,13 +30,7 @@ export const fetchThingSpeakData = async (
 ): Promise<ThingSpeakResponse["feeds"]> => {
   const url = `https://api.thingspeak.com/channels/${channelId}/feeds.json?api_key=${readApiKey}&results=1`;
 
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch data from ThingSpeak");
-  }
-
-  const data = (await response.json()) as ThingSpeakResponse;
+  const data = await ofetch<ThingSpeakResponse>(url);
 
   return data.feeds;
 };

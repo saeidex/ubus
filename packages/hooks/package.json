@@ -25,6 +25,7 @@
     "@ubus/stores": "workspace:^",
     "date-fns": "^4.1.0",
     "js-cookie": "^3.0.5",
+    "ofetch": "^1.4.1",
     "react": "catalog:react18"
   },
   "devDependencies": {
