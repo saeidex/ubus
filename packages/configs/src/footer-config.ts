@@ -46,7 +46,7 @@ export const footerMenuItems: readonly IMenuItem[] = [
     links: [
       {
         label: "Settings",
-        href: "/dashboard/settings",
+        href: "/app/settings",
       },
       {
         label: "Contact",

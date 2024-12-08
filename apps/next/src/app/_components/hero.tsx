@@ -52,10 +52,10 @@ export const CTA = () => {
 
   return (
     <div className="space-y-4">
-      <Link href={{ pathname: session ? "/dashboard" : "/get-started" }}>
+      <Link href={{ pathname: session ? "/app" : "/get-started" }}>
         <Button variant={"withIcon"}>
           <IconArrowRight stroke={2} size={20} />
-          {session ? "Dashboard" : "Track now"}
+          {session ? "Open web app" : "Track now"}
         </Button>
       </Link>
     </div>

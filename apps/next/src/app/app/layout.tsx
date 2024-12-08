@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { DashboardProviders } from "../_components/providers";
+import { AppProviders } from "../_components/providers";
 
 interface DashboardLayoutProps {
   children: ReactNode | JSX.Element;
@@ -8,9 +8,9 @@ interface DashboardLayoutProps {
 
 const DashboardLayout = (props: DashboardLayoutProps) => {
   return (
-    <DashboardProviders>
+    <AppProviders>
       <main className="h-full w-full">{props.children}</main>
-    </DashboardProviders>
+    </AppProviders>
   );
 };
 

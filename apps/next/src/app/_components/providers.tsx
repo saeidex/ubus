@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { HookProviders } from "@ubus/hooks/hook-providers";
 import { MqttProvider } from "@ubus/mqtt";
 
-export const DashboardProviders = ({
+export const AppProviders = ({
   children,
 }: {
   children: ReactNode | JSX.Element;

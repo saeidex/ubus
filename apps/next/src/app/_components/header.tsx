@@ -36,9 +36,9 @@ export const LandingHeader = () => {
           </Link>
           <Link
             className="hidden sm:inline"
-            href={{ pathname: session ? "/dashboard" : "/get-started" }}
+            href={{ pathname: session ? "/app" : "/get-started" }}
           >
-            <Button>{session ? "Dashboard" : "Get started"}</Button>
+            <Button>{session ? "Open web app" : "Get started"}</Button>
           </Link>
         </div>
         <LandingNavbar />
