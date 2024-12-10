@@ -1,4 +1,4 @@
-# ubus
+# ubus (`unmaintained` - only focusing on mobile app)
 
 ## About
 
