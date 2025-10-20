@@ -1,10 +1,19 @@
 {
   "compilerOptions": {
-    "lib": ["ES2022", "dom", "dom.iterable"],
+    "lib": [
+      "ES2022",
+      "dom",
+      "dom.iterable"
+    ],
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": [
+        "./src/*"
+      ],
+      "@ubus/mqtt": [
+        "../../packages/mqtt-mock/src"
+      ]
     },
     "plugins": [
       {
@@ -13,12 +22,15 @@
     ],
     "module": "esnext"
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "extends": "@ubus/tsconfig/base.json",
   "include": [
     ".",
     ".next/types/**/*.ts",
     "src/app/_components/auth-showcase.tsx",
-    "src/app/_components/logo.tsx"
-, "../../packages/hooks/src/use-walking-route.ts"  ]
+    "src/app/_components/logo.tsx",
+    "../../packages/hooks/src/use-walking-route.ts"
+  ]
 }

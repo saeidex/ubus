@@ -1,7 +1,7 @@
 "use client";
 
 import { useThingSpeak } from "@ubus/hooks/use-thing-speak";
-import { useBusLocationsQuery } from "@ubus/mqtt";
+import { useBusLocationsQuery } from "@ubus/mqtt-mock";
 
 import { BusLocationMarker } from "./bus-location-marker";
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useBusLocationsQuery } from "@ubus/mqtt";
+import { useBusLocationsQuery } from "@ubus/mqtt-mock";
 
 interface BusLocationPageProps {
   params: {

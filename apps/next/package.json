@@ -25,7 +25,7 @@
     "@trpc/server": "catalog:",
     "@ubus/configs": "workspace:*",
     "@ubus/hooks": "workspace:*",
-    "@ubus/mqtt": "workspace:^",
+    "@ubus/mqtt-mock": "workspace:*",
     "@ubus/stores": "workspace:^",
     "@ubus/ui": "workspace:*",
     "@ubus/validators": "workspace:*",
