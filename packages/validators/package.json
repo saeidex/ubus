@@ -1,6 +1,5 @@
 {
   "name": "@ubus/validators",
-  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -15,7 +14,7 @@
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
     "format": "prettier --check . --ignore-path ../../.gitignore",
-    "lint": "eslint",
+    "lint": "eslint --flag unstable_native_nodejs_ts_config",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@ubus/prettier-config",

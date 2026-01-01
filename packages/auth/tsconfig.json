@@ -1,0 +1,10 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "@ubus/tsconfig/base.json",
+  "include": [
+    "src",
+    "*.ts"
+  ]
+}

@@ -2,35 +2,36 @@
   "name": "ubus",
   "private": true,
   "scripts": {
+    "android": "expo run:android",
+    "auth:generate": "pnpm -F @ubus/auth generate",
     "build": "turbo run build",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo run clean",
     "db:push": "turbo -F @ubus/db push",
     "db:studio": "turbo -F @ubus/db studio",
-    "dev": "turbo watch dev",
-    "dev:next": "turbo watch dev -F @ubus/next...",
-    "dev:server": "turbo watch dev -F @ubus/server...",
+    "dev": "turbo watch dev --continue",
     "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
     "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
     "postinstall": "pnpm lint:ws",
+    "ios": "expo run:ios",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
     "lint:ws": "pnpm dlx sherif@latest",
-    "turbo:gen": "turbo gen init",
-    "turbo:restart": "turbo daemon restart",
     "typecheck": "turbo run typecheck",
     "ui-add": "turbo run ui-add"
   },
   "prettier": "@ubus/prettier-config",
   "devDependencies": {
-    "@turbo/gen": "^2.1.1",
+    "@turbo/gen": "^2.7.2",
     "@ubus/prettier-config": "workspace:*",
+    "dotenv-cli": "^10.0.0",
     "prettier": "catalog:",
-    "turbo": "^2.1.1",
+    "turbo": "^2.7.2",
     "typescript": "catalog:"
   },
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@10.19.0",
   "engines": {
-    "node": ">=20.16.0"
+    "node": "^22.21.0",
+    "pnpm": "^10.19.0"
   }
 }

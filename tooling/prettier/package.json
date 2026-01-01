@@ -1,6 +1,5 @@
 {
   "name": "@ubus/prettier-config",
-  "version": "0.1.0",
   "private": true,
   "type": "module",
   "exports": {
@@ -13,11 +12,12 @@
   },
   "prettier": "@ubus/prettier-config",
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "prettier": "catalog:",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "prettier-plugin-tailwindcss": "^0.7.1"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
     "@ubus/tsconfig": "workspace:*",
     "typescript": "catalog:"
   }

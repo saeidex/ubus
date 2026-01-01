@@ -16,7 +16,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: "input",
         name: "name",
         message:
-          "What is the name of the package? (You can skip the `@ubus/` prefix)",
+          "What is the name of the package? (You can skip the `@acme/` prefix)",
       },
       {
         type: "input",
@@ -28,16 +28,16 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     actions: [
       (answers) => {
         if ("name" in answers && typeof answers.name === "string") {
-          if (answers.name.startsWith("@ubus/")) {
-            answers.name = answers.name.replace("@ubus/", "");
+          if (answers.name.startsWith("@acme/")) {
+            answers.name = answers.name.replace("@acme/", "");
           }
         }
         return "Config sanitized";
       },
       {
         type: "add",
-        path: "packages/{{ name }}/eslint.config.js",
-        templateFile: "templates/eslint.config.js.hbs",
+        path: "packages/{{ name }}/eslint.config.ts",
+        templateFile: "templates/eslint.config.ts.hbs",
       },
       {
         type: "add",

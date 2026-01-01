@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "dom",
+      "dom.iterable"
+    ],
+    "jsx": "preserve",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "@ubus/tsconfig/base.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
